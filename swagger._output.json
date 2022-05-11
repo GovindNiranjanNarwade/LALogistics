@@ -1,0 +1,218 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "LA Logistics Service",
+      "description": "LA Logistics Services Customer  Api Created."
+    },
+    "content-Type":"text/plain",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Customer",
+        "description":"CustomerDetails"
+      } 
+      
+    ],
+
+   "$schema": {
+
+   },
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/api/v1/customer/CreateCustomer": {
+        "post": {
+          "tags": [
+            "Customer"
+          ],
+          "description": "Create Customer Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"Customer",
+                "schema": {
+                    "$ref": "#/definitions/Customer"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+
+   
+        }
+      },
+
+
+      "/api/v1/customer/getCustomer": {
+        "get": {
+          "tags": [
+            "Customer"
+          ],
+          "description": "get Customer Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "schema":{
+
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Customer Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/Customer"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/customer/deleteCustomer/{id}": {
+        "delete": {
+          "tags": [
+            "Customer"
+          ],
+          "description": "Delete a Customer Details",
+          "parameters": [
+          {
+            "id":"",
+            "in":"body",
+            "name":"Product",
+            "type":"object",
+            "example":{
+              "CustomerId":""
+            }
+
+          }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "$ref": "#/definitions/Customer"
+              },
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+
+
+      "/api/v1/customer/getSingleCustomer/{id}":{
+        "get": {
+          "tags": [
+            "Customer"
+          ],
+          "description": "Endpoint to get the specific Customer.",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+         
+          "responses": {
+            "200": {
+              "description": " Single Customer information.",
+              "schema": {
+                "$ref": "#/definitions/Customer"
+              }
+             
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+       
+      }
+      
+
+    },
+
+
+    "definitions": {
+      "Customer":{
+        "type":"object",
+        "properties":{
+          "CustomerId":{
+            "type":"String",
+            "example":""
+            
+        },
+        "CustomerName":{
+         "type":"String",
+         "example":""
+        },
+        "Email":{
+            "type":"String",
+            "example":""
+          
+        },
+        "Mobile":{
+            "type":"Number",
+            "example":""
+            
+        },
+        "Password":{
+            "type":"String",
+            "example":""
+            
+        },
+        "BillingAddress":{
+            "type":"String",
+            "example":""
+            
+        },
+        "City":{
+            "type":"String",
+            "example":""
+            
+        },
+        "CompanyName":{
+            "type":"String",
+            "example":""
+            
+        },
+        "GstNo":{
+            "type":"String",
+            "example":""
+            
+        }
+        }
+      }
+      
+  }
+}
