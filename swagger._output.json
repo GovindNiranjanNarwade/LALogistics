@@ -307,6 +307,63 @@
 
         }
         }
+      },
+      "/api/v1/billing/getBillingDetails": {
+        "get": {
+          "tags": [
+            "Billing"
+          ],
+          "description": "get Billing Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+           
+          ],
+          "responses": {
+            "200": {
+              "description": "Billing Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/Billing"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/billing/deleteBillingDetails/{id}": {
+        "delete": {
+          "tags": [
+            "Billing"
+          ],
+          "description": "Delete a Billing Details",
+          "parameters": [
+          {
+            "id":"",
+            "in":"body",
+            "name":"Product",
+            "type":"object",
+            "example":{
+              "CustomerId":""
+            }
+
+          }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "$ref": "#/definitions/Billing"
+              },
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
       }
       
 
