@@ -11,7 +11,16 @@
       {
         "name": "Customer",
         "description":"CustomerDetails"
-      } 
+      } ,
+      {
+        "name": "Admin",
+        "description":"AdminDetails"
+      } ,
+      {
+        "name":"Billing",
+        "description":"BillingDetails"
+
+      }
       
     ],
 
@@ -61,8 +70,6 @@
           }
 
         }
-
-   
         }
       },
 
@@ -128,8 +135,6 @@
           }
         }
       },
-
-
       "/api/v1/customer/getSingleCustomer/{id}":{
         "get": {
           "tags": [
@@ -157,12 +162,155 @@
           }
         }
        
+      },
+      "/api/v1/Createadmin": {
+        "post": {
+          "tags": [
+            "Admin"
+          ],
+          "description": "Create Admin Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"Admin",
+                "schema": {
+                    "$ref": "#/definitions/Admin"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Admin"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
+      },
+      "/api/v1/getadmin": {
+        "get": {
+          "tags": [
+            "Admin"
+          ],
+          "description": "get Admin Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "schema":{
+
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Admin Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/Admin"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/UserLogin": {
+        "post": {
+          "tags": [
+            "Admin"
+          ],
+          "description": " Admin Login",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "name":"Admin",
+                "schema": {
+                    "name":"Admin",
+                   "type":"object",
+                    "example":{
+                      "email":"",
+                      "password":""
+                    }
+                  }
+            }    
+        ],
+
+          "responses": {
+            "201": {
+              "description": "Created"
+            
+            },
+           
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/api/v1/billing/CreateBillingDetails": {
+        "post": {
+          "tags": [
+            "Billing"
+          ],
+          "description": "Create Billing Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"Billing",
+                "schema": {
+                    "$ref": "#/definitions/Billing"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Billing"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
       }
       
 
     },
-
-
     "definitions": {
       "Customer":{
         "type":"object",
@@ -210,6 +358,129 @@
             "type":"String",
             "example":""
             
+        }
+        }
+      },
+      "Admin":{
+        "type":"object",
+"properties":{
+  "name":{
+    "type":"String",
+    "example":""
+    
+},
+"email":{
+    "type":"String",
+    "example":""
+},
+"password":{
+    "type":"String",
+    "example":""
+}
+
+}
+      },
+      "Billing":{
+        "type":"object",
+        "properties":{
+          "CustomerId":{
+            "type":"String",
+            "example":""
+            
+        },
+          "NameofCustomer":{
+            "type":"String",
+            "example":""
+            
+        },
+        "CustomerEmail":{
+            "type":"String",
+            "example":""
+          
+        },
+        "CustomerMobile":{
+            "type":"Number",
+            "example":""
+            
+        },
+        "GSTNO":{
+            "type":"String",
+            "example":""
+           },
+        "CustomerAddress":{
+            "type":"String",
+            "example":""
+            
+        },
+        "INVOICE":{
+          "type":"String",
+          "example":""
+        },
+        "InvoiceDate":{
+          "type":"Date",
+          "example":""
+        },
+        "INVOICEDuration":{
+          "type":"String",
+          "example":""
+        },
+        "PlaceofSupply":{
+          "type":"String",
+          "example":""
+        },
+        "Particular":{
+            "type":"String",
+            "example":""
+        },
+        "HSNCode":{
+            "type":"String",
+            "example":""
+        },
+        "NONTAXBLEVALUE":{
+            "type":"String",
+            "example":""
+        },
+        "TAXBLEVALUE":{
+            "type":"String",
+            "example":""
+        },
+        "CGST":{
+            "Rate":{
+                "type":"Number",
+                "example":""
+            },
+            "Amount":{
+                "type":"Number",
+                "example":""
+            }
+        },
+        "SGST":{
+            "Rate":{
+                "type":"Number",
+                "example":""
+            },
+            "Amount":{
+                "type":"Number",
+                "example":""
+            }
+        },
+        "IGST":{
+            "Rate":{
+                "type":"Number",
+                "example":""
+            },
+            "Amount":{
+                "type":"Number",
+                "example":""
+            }
+        },
+        "SubTotal":{
+            "type":"Number",
+            "example":""
+        },
+        "Total":{
+            "type":"String",
+            "example":""
         }
         }
       }

@@ -1,5 +1,9 @@
 const mongoose = require("mongoose")
 const billingSchema = mongoose.Schema({
+    CustomerId:{
+        type:String,
+        
+    },
     NameofCustomer:{
         type:String,
         
