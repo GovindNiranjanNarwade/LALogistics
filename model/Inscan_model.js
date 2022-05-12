@@ -23,7 +23,7 @@ const InscanDetailsSchema = mongoose.Schema({
         type:String,
         
     },
-    DriverInfo:{
+   
         Driver:{
             type:String,
             
@@ -64,7 +64,7 @@ const InscanDetailsSchema = mongoose.Schema({
             type:String,
             
         },
-    }
+    
 },{
 timestamps:true
 })

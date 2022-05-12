@@ -1,17 +1,12 @@
 const admin = require("../model/admin_model")
 exports.emailSend=async(req,res)=>{
-    console.log(req.body.Email);
-    let data = await admin.findOne({Email:req.body.email});
+    let data = await admin.findOne({email:req.body.email});
+    console.log(req.body.email);
     console.log(data);
     const responseType = {};
     if(data){
-        let otpcode =Math.floor((Math.random()*10000)+1);
-        let otpData = new  otp({
-            Email:req.body.email,
-            code:otpcode,
-            expireIn:new Date().getTime() + 300 *1000
-        })
-        let  otpResponse= await  otpData.save();
+        let otpcode = Math.floor((Math.random()*10000)+1);
+        console.log(otpcode);
         responseType.statusText ='Success'
         responseType.message = 'Please check Your Email Id';
 
@@ -24,7 +19,7 @@ exports.emailSend=async(req,res)=>{
    
 }
 exports.changePassword=async(req,res)=>{
-   let  data = await otp.find({Email:req.body.email,code:req.body.otp});
+   let  data = await admin.find({email:req.body.email,otp:req.body.otp});
    const responseType = {};
    if(data){
        let currentTime =new Date().getTime();
@@ -33,7 +28,7 @@ if(diff <0){
     responseType.message= 'error'
     responseType.statusText ='Please Resend OTP'
 }else{
-  let emailexit =await user.findOne({Email:req.body.Email})  
+  let emailexit =await admin.findOne({email:req.body.email})  
   emailexit.password =req.body.password;
   emailexit.save();
   responseType.message ='Your Password Changed Successfully' 

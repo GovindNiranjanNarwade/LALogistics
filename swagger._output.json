@@ -35,6 +35,31 @@
         "name":"Enquiry",
         "description":"EnquiryDetails"
 
+      },
+      {
+        "name":"InscanDetails",
+        "description":"InscanDetails"
+
+      },
+      {
+        "name":"MenifestDetails",
+        "description":"MenifestDetails"
+
+      },
+      {
+        "name":"OfficeDetails",
+        "description":"OfficeDetails"
+
+      },
+      {
+        "name":"PickupDetails",
+        "description":"PickupDetails"
+
+      },
+      {
+        "name":"PODDetails",
+        "description":"PODDetails"
+
       }
       
     ],
@@ -132,7 +157,7 @@
             "name":"Customer",
             "type":"object",
             "example":{
-              "CustomerId":""
+              "id":""
             }
 
           }
@@ -169,7 +194,7 @@
             "name":"Customer",
             "type":"object",
             "example":{
-              "CustomerId":""
+              "id":""
             }
 
           }
@@ -209,7 +234,7 @@
               "name":"Customer",
               "type":"object",
               "example":{
-                "CustomerId":""
+                "id":""
               }
   
             }
@@ -329,6 +354,83 @@
           }
         }
       },
+      "/api/v1/forgotPassword/emailSend": {
+        "post": {
+          "tags": [
+            "Admin"
+          ],
+          "description": " send email for forgot Password",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "name":"Admin",
+                "schema": {
+                    "name":"Admin",
+                   "type":"object",
+                    "example":{
+                      "email":""
+
+                      
+                    }
+                  }
+            }    
+        ],
+          "responses": {
+            "201": {
+              "description": "Created"
+            
+            },
+           
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/api/v1/forgotPassword/changePassword": {
+        "post": {
+          "tags": [
+            "Admin"
+          ],
+          "description": " Password Change Successfully",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "name":"Admin",
+                "schema": {
+                    "name":"Admin",
+                   "type":"object",
+                    "example":{
+                      "password":""
+                      
+                    }
+                  }
+            }    
+        ],
+          "responses": {
+            "201": {
+              "description": "Created"
+            
+            },
+           
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
       "/api/v1/billing/CreateBillingDetails": {
         "post": {
           "tags": [
@@ -406,7 +508,7 @@
             "name":"Billing",
             "type":"object",
             "example":{
-              "CustomerId":""
+              "":""
             }
 
           }
@@ -1049,15 +1151,745 @@
             }
           }
         }
+      },
+      "/api/v1/CreateInscanDetails": {
+        "post": {
+          "tags": [
+            "InscanDetails"
+          ],
+          "description": "Create Inscan Details ",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"InscanDetails",
+                "schema": {
+                    "$ref": "#/definitions/InscanDetails"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/InscanDetails"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
+      },
+
+
+      "/api/v1/getInscanDetails": {
+        "get": {
+          "tags": [
+            "InscanDetails"
+          ],
+          "description": "get Inscan Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "schema":{
+
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Inscan Details Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/InscanDetails"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/deleteInscanDetails/{id}": {
+        "delete": {
+          "tags": [
+            "InscanDetails"
+          ],
+          "description": "Delete a Inscan Details ",
+          "parameters": [
+          {
+            "id":"",
+            "in":"body",
+            "name":"InscanDetails",
+            "type":"object",
+            "example":{
+              "id":""
+            }
+
+          }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "$ref": "#/definitions/InscanDetails"
+              },
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/getSingleInscanDetails/{id}":{
+        "get": {
+          "tags": [
+            "InscanDetails"
+          ],
+          "description": "Endpoint to get the specific Inscan Details.",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+         "parameters":[
+          {
+            "id":"",
+            "in":"body",
+            "name":"InscanDetails",
+            "type":"object",
+            "example":{
+              "":""
+            }
+
+          }
+         ],
+          "responses": {
+            "200": {
+              "description": " Single Inscan information.",
+              "schema": {
+                "$ref": "#/definitions/InscanDetails"
+              }
+             
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+       
+      },
+      "/api/v1/updateInscanDetails/{id}":{
+        "put": {
+          "tags": [
+            "InscanDetails"
+          ],
+          "description": "Edit Inscan Details ",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+            {
+              "id":"",
+              "in":"body",
+              "name":"InscanDetails",
+              "type":"object",
+              "example":{
+                "id":""
+              }
+  
+            }
+          
+           
+          ],
+          "responses": {
+            "200": {
+            
+              "description": "Inscan Details found update the Inscan Details ."
+            },
+            "500": {
+              "description": "Server Failure."
+            }
+          }
+        }
+      },
+      "/api/v1/CreateMenifestDetails": {
+        "post": {
+          "tags": [
+            "MenifestDetails"
+          ],
+          "description": "Create Menifest Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"MenifestDetails",
+                "schema": {
+                    "$ref": "#/definitions/MenifestDetails"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/MenifestDetails"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
+      },
+      "/api/v1/getMenifestDetails": {
+        "get": {
+          "tags": [
+            "MenifestDetails"
+          ],
+          "description": "get Menifest Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Menifest Details Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/MenifestDetails"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/deleteMenifestDetails/{id}": {
+        "delete": {
+          "tags": [
+            "MenifestDetails"
+          ],
+          "description": "Delete a Menifest Details ",
+          "parameters": [
+          {
+            "id":"",
+            "in":"body",
+            "name":"MenifestDetails",
+            "type":"object",
+            "example":{
+              "":""
+            }
+
+          }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "$ref": "#/definitions/MenifestDetails"
+              },
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/SingleMenifestDetails/{id}":{
+        "get": {
+          "tags": [
+            "MenifestDetails"
+          ],
+          "description": "Endpoint to get the specific Menifest Details.",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+         "parameters":[
+          {
+            "id":"",
+            "in":"body",
+            "name":"Customer",
+            "type":"object",
+            "example":{
+              "id":""
+            }
+
+          }
+         ],
+          "responses": {
+            "200": {
+              "description": " Single Customer information.",
+              "schema": {
+                "$ref": "#/definitions/MenifestDetails"
+              }
+             
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+       
+      },
+      "/api/v1/updateMenifestDetails/{id}":{
+        "put": {
+          "tags": [
+            "MenifestDetails"
+          ],
+          "description": "Edit Menifest Details ",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+            {
+              "id":"",
+              "in":"body",
+              "name":"MenifestDetails",
+              "type":"object",
+              "example":{
+                "id":""
+              }
+  
+            }
+          
+           
+          ],
+          "responses": {
+            "200": {
+            
+              "description": "Customer found update the MenifestDetails details."
+            },
+            "500": {
+              "description": "Server Failure."
+            }
+          }
+        }
+      },
+      "/api/v1/officeAdmin/createOfficeAdmin": {
+        "post": {
+          "tags": [
+            "OfficeDetails"
+          ],
+          "description": "Create Office Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"Office",
+                "schema": {
+                    "$ref": "#/definitions/Office"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Office"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
+      },
+
+
+      "/api/v1/officeAdmin/getOfficeAdmin": {
+        "get": {
+          "tags": [
+            "OfficeDetails"
+          ],
+          "description": "get Office Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "schema":{
+
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Office Details Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/Office"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/officeAdmin/deleteOfficeAdmin/{id}": {
+        "delete": {
+          "tags": [
+            "OfficeDetails"
+          ],
+          "description": "Delete a Office Details",
+          "parameters": [
+          {
+            "id":"",
+            "in":"body",
+            "name":"Office",
+            "type":"object",
+            "example":{
+              "id":""
+            }
+
+          }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "$ref": "#/definitions/Office"
+              },
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/officeAdmin/getSingleOfficeAdmin/{id}":{
+        "get": {
+          "tags": [
+            "OfficeDetails"
+          ],
+          "description": "Endpoint to get the specific Office.",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+         "parameters":[
+          {
+            "id":"",
+            "in":"body",
+            "name":"Customer",
+            "type":"object",
+            "example":{
+              "":""
+            }
+
+          }
+         ],
+          "responses": {
+            "200": {
+              "description": " Single Office information.",
+              "schema": {
+                "$ref": "#/definitions/Office"
+              }
+             
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+       
+      },
+      "/api/v1/officeAdmin/updateOfficeAdmin/{id}":{
+        "put": {
+          "tags": [
+            "OfficeDetails"
+          ],
+          "description": "Edit Office Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+            {
+              "id":"",
+              "in":"body",
+              "name":"Office",
+              "type":"object",
+              "example":{
+                "id":""
+              }
+  
+            }
+          
+           
+          ],
+          "responses": {
+            "200": {
+            
+              "description": "Office found update the Office details."
+            },
+            "500": {
+              "description": "Server Failure."
+            }
+          }
+        }
+      },
+      "/api/v1/createPickupDetails": {
+        "post": {
+          "tags": [
+            "PickupDetails"
+          ],
+          "description": "Create Pickup Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"PickupDetails",
+                "schema": {
+                    "$ref": "#/definitions/PickupDetails"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/PickupDetails"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
+      },
+
+
+      "/api/v1/getPickupDetails": {
+        "get": {
+          "tags": [
+            "PickupDetails"
+          ],
+          "description": "get Pickup Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "schema":{
+
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Pickup Details Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/PickupDetails"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/deletePickupDetails/{id}": {
+        "delete": {
+          "tags": [
+            "PickupDetails"
+          ],
+          "description": "Delete a Pickup Details ",
+          "parameters": [
+          {
+            "id":"",
+            "in":"body",
+            "name":"PickupDetails",
+            "type":"object",
+            "example":{
+              "id":""
+            }
+
+          }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "$ref": "#/definitions/PickupDetails"
+              },
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+     
+      "/api/v1/createPodDetails": {
+        "post": {
+          "tags": [
+            "PODDetails"
+          ],
+          "description": "Create POD Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"PODDetails",
+                "schema": {
+                    "$ref": "#/definitions/PODDetails"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/PODDetails"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
+      },
+
+
+      "/api/v1/getPodDetails": {
+        "get": {
+          "tags": [
+            "PODDetails"
+          ],
+          "description": "get POD Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "POD Details Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/PODDetails"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/deletePODDetails/{id}": {
+        "delete": {
+          "tags": [
+            "PODDetails"
+          ],
+          "description": "Delete a POD Details",
+          "parameters": [
+          {
+            "id":"",
+            "in":"body",
+            "name":"PODDetails",
+            "type":"object",
+            "example":{
+              "id":""
+            }
+
+          }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "$ref": "#/definitions/PODDetails"
+              },
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
       }
-      
+     
+          
+           
+          
 
     },
     "definitions": {
       "Customer":{
         "type":"object",
         "properties":{
-          "CustomerId":{
+          "":{
             "type":"String",
             "example":""
             
@@ -1125,7 +1957,7 @@
       "Billing":{
         "type":"object",
         "properties":{
-          "CustomerId":{
+          "":{
             "type":"String",
             "example":""
             
@@ -1278,7 +2110,7 @@
           "example":""
           
       },
-      "CustomerId":{
+      "":{
           "type":"String",
           "example":""
         
@@ -1566,6 +2398,421 @@
           "example":""   
       }
        }
-     }
+     },
+     "InscanDetails":{
+       "type":"object",
+       "properties":{
+        "Branch":{
+          "type":"Date",
+          "example":""
+          
+      },
+      "Growdown":{
+          "type":"String",
+          "example":""
+        
+      },
+      "DispatchOn":{
+          "type":"Date",
+          "example":""
+          
+      },
+      "Menifest":{
+          "type":"String",
+          "example":""
+         },
+      "FromStation":{
+          "type":"Date",
+          "example":""
+          
+      },
+      "ArrivalKM":{
+          "type":"String",
+          "example":""
+          
+      },
+      
+          "Driver":{
+              "type":"String",
+              "example":""
+              
+          },
+          "ModeName":{
+              "type":"String",
+              "example":""
+              
+          },
+          "ModeType":{
+              "type":"String",
+              "example":""
+              
+          },
+          "DispatchTime":{
+              "type":"String",
+              "example":""
+          },
+          "DispatchDate":{
+              "type":"String"
+          },
+          "DriverMobile":{
+              "type":"Number",
+              "example":""
+              
+          },
+          "ArrivalTrough":{
+              "type":"Date",
+              "example":""
+              
+          },
+          "SERArrival":{
+              "type":"String",
+              "example":""
+              
+          },
+      
+          "UnLoadingPersion":{
+              "type":"String",
+              "example":""
+              
+          },
+         
+          "Remark":{
+              "type":"String",
+              "example":""              
+          }
+       }
+      },
+      "MenifestDetails":{
+        "type":"object",
+        "properties":{
+          "ModeType":{
+            "type":"Date",
+            "example":""
+            
+        },
+        "FreightMemo":{
+            "type":"String",
+            "example":""
+          
+        },
+        "BranchType":{
+            "type":"Number",
+            "example":""
+            
+        },
+        "Menifest":{
+            "type":"String",
+            "example":""
+           },
+        "DispatchDate":{
+            "type":"Date",
+            "example":""
+            
+        },
+        "DispatchTime":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Vendor":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Vechical":{
+            "type":"String",
+            "example":""
+            
+        },
+        "VechicalType":{
+            "type":"String",
+            "example":""
+            
+        },
+        "DriverName":{
+            "type":"String",
+            "example":""
+            
+        },
+        "DriverMobile":{
+            "type":"Number",
+            "example":""
+            
+        },
+        "EwBDate":{
+            "type":"String",
+            "example":""
+            
+        },
+        "VechicalVendor":{
+            "type":"String",
+            "example":""
+            
+        },
+    
+        "LoadingPersion":{
+            "type":"String",
+            "example":""
+            
+        },
+       
+        "Remark":{
+            "type":"String",
+            "example":""
+            
+        }
+        }
+      },
+      "Office":{
+        "type":"object",
+        "properties":{
+          "AdminName":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Email":{
+            "type":"String",
+            "example":""
+          
+        },
+        "Mobile":{
+            "type":"Number",
+            "example":""
+            
+        },
+        "Role":{
+            "type":"String",
+            "example":""
+           },
+        "Password":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Address":{
+            "type":"String",
+            "example":""
+            
+        },
+        "City":{
+            "type":"String",
+            "example":""
+          
+        },
+        "State":{
+            "type":"String",
+            "example":""
+            
+        }
+        }
+      },
+      "PickupDetails":{
+        "type":"object",
+        "properties":{
+          "Date":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Time":{
+            "type":"String",
+            "example":""
+          
+        },
+        "JobTitle":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Reference":{
+            "type":"String",
+            "example":""
+           },
+        "Department":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Customer":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Destination":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Origin":{
+            "type":"String",
+            "example":""
+            
+        },
+        "State":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Consigner":{
+            "type":"String",
+            "example":""
+            
+        },
+        "GrossWeight":{
+            "type":"String",
+            "example":""
+            
+        },
+        "NoOfPcs":{
+            "type":"Number",
+            "example":""
+            
+        },
+        "PickupTime":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Contents":{
+            "type":"String",
+            "example":""
+            
+        },
+        "PackegeType":{
+            "type":"String",
+            "example":""
+            
+        },
+        "PickupRegistered":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Remark":{
+            "type":"String",
+            "example":""
+            
+        }
+        
+        }
+      },
+      "PODDetails":{
+        "type":"object",
+        "properties":{
+          "Branch":{
+            "type":"String",
+            "example":""
+            
+        },
+        "GateInDate":{
+            "type":"String",
+            "example":""
+            
+        },
+        "GateINTime":{
+            "type":"String",
+            "example":""
+          
+        },
+        "GRType":{
+            "type":"String",
+            "example":""
+            
+        },
+        "GR":{
+            "type":"String",
+            "example":""
+           },
+        "BookingDate":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Customer":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Destination":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Origin":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Consignee":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Consigner":{
+            "type":"String",
+            "example":""
+            
+        },
+        "ArrivalDate":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Packgs":{
+            "type":"Number",
+            "example":""
+            
+        },
+        "Weight":{
+            "type":"String",
+            "example":""
+            
+        },
+        "DeliveryBoyName":{
+            "type":"String",
+            "example":""
+            
+        },
+        "DeliveryDate":{
+            "type":"String",
+            "example":""
+            
+        },
+        "DeliveryTime":{
+            "type":"String",
+            "example":""
+            
+        },
+        "DestinationReletaion":{
+            "type":"String",
+            "example":""
+            
+        },
+        "DRS":{
+            "type":"String",
+            "example":""
+            
+        },
+        "ReceivedBy":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Idproof":{
+            "type":"String",
+            "example":""
+            
+        },
+        "Remark":{
+            "type":"String",
+            "example":""
+                  },
+        "file":{
+    "type":"String",
+    "example":""
+        }
+        }
+      }
   }
 }

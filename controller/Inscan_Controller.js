@@ -15,7 +15,7 @@ try {
     })
 }
 }
-exports.getMenifestDetails= async(req,res)=>{
+exports.getInscanDetails= async(req,res)=>{
     try {
        const result = await InscanDetails.find()
        res.json({

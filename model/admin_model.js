@@ -7,15 +7,15 @@ const adminSchema = mongoose.Schema({
     },
     email:{
         type:String,
-        required:true
+       
     },
     password:{
         type:String,
-        required:true
+        
     },
     otp:{
         type:String,
-        required:true
+        
     },
     isAdmin:{
         type:Boolean,
