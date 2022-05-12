@@ -48,3 +48,37 @@ exports.createDRSDetails=async (req,res)=>{
                 })
             }
             }
+            exports.updateDRSDetails = async(req,res)=>{
+                try {
+                    const result = await DRSDetails.findByIdAndUpdate(req.params.id,req.body, {
+                        new: true,
+                        runValidators: true,})
+                    res.json({
+                        success:true,
+                        message:"update DRS Details Details",
+                        data:result
+                    })
+                } catch (error) {
+                    res.json({
+                        success:false,
+                        message:"Something  went wrong",
+                        data:null
+                    })  
+                }
+            }
+            exports.getSingleDRSDetails = async(req,res)=>{
+                try {
+                    const result = await DRSDetails.findById(req.params.id)
+                    res.json({
+                        success:true,
+                        message:"get a Single DRS Details  ",
+                        data:result
+                    })
+                } catch (error) {
+                    res.json({
+                        success:false,
+                        message:"Something  went wrong",
+                        data:null
+                    })  
+                }
+            }

@@ -15,6 +15,6 @@ router.route("/updateDeliveryBoyDetails/:id").put(updateDeliveryBoyDetails)
 //method put
 router.route("/getSingleDeliveryBoyDetails/:id").get(getSingleDeliveryBoyDetails)
 // route http://192.168.43.220:5000/api/v1/getSingleDeliveryBoyDetails
-//method put
+//method get
 
 module.exports = router

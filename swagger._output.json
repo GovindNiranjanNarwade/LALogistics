@@ -692,7 +692,7 @@
             "name":"Docket",
             "type":"object",
             "example":{
-              "DocketId":""
+              "DRS":""
             }
 
           }
@@ -764,6 +764,163 @@
             "200": {
             
               "description": "Docket  Details found update the Docket details."
+            },
+            "500": {
+              "description": "Server Failure."
+            }
+          }
+        }
+      },
+      
+      "/api/v1/DRS/createDRSDetails": {
+        "post": {
+          "tags": [
+            "DRSDetails"
+          ],
+          "description": "Create DRS Details  ",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"DRSDetails",
+                "schema": {
+                    "$ref": "#/definitions/DRSDetails"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/DRSDetails"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
+      },
+      "/api/v1/DRS/getDRSDetails": {
+        "get": {
+          "tags": [
+            "DRSDetails"
+          ],
+          "description": "get DRS Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "DRS Details   Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/DRSDetails"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/DRS/deleteDRSDetails:{id}": {
+        "delete": {
+          "tags": [
+            "DRSDetails"
+          ],
+          "description": "Delete a DRS Details  ",
+          "parameters": [
+          {
+            "id":"",
+            "in":"body",
+            "name":"DRSDetails",
+            "type":"object",
+            "example":{
+              "DocketId":""
+            }
+
+          }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "$ref": "#/definitions/DRSDetails"
+              },
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/getSingleDRSDetails/{id}":{
+        "get": {
+          "tags": [
+            "DRSDetails"
+          ],
+          "description": "Endpoint to get the specific DRS Details .",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+         
+          "responses": {
+            "200": {
+              "description": " Single DRS  information.",
+              "schema": {
+                "$ref": "#/definitions/DRSDetails"
+              }
+             
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+       
+      },
+      "api/v1/updateDRSDetails/{id}":{
+        "put": {
+          "tags": [
+            "DRSDetails"
+          ],
+          "description": "Edit DRSDetails  Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          {
+            "in":"body",
+            "name":"DRSDetails",
+            "schema": {
+              "$ref": "#/definitions/DRSDetails"
+            }
+          }
+           
+          ],
+          "responses": {
+            "200": {
+            
+              "description": "DRS Details   found update the DRS Details ."
             },
             "500": {
               "description": "Server Failure."
@@ -1140,6 +1297,130 @@
         }
       }
        }
-     } 
+     } ,
+     "DRSDetails":{
+       "type":"object",
+       "properties":{
+        "Branch":{
+          "type":"String",
+          "example":""
+          
+      },
+      "DRS":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Date":{
+          "type":"Date",
+          "example":""
+      },
+      "Time":{
+          "type":"String",
+          "example":""
+      },
+      "Vendor":{
+          "type":"String",
+          "example":""
+      },
+      "Vechical":{
+          "type":"String",
+          "example":""
+      },
+      "PlantName":{
+          "type":"String",
+          "example":""
+      },
+      "GateInDate":{
+          "type":"Date",
+          "example":""
+          
+      },
+      "GateINTime":{
+          "type":"String",
+          "example":""
+        
+      },
+      "GateOutDate":{
+          "type":"Date",
+          "example":""
+          
+      },
+      "GateOutTime":{
+          "type":"String",
+          "example":""
+        
+      },
+      "DeliveredBy":{
+          "type":"String",
+          "example":""
+          
+      },
+      "DeliveryBoyName":{
+          "type":"String",
+          "example":""
+         },
+      "BookingDate":{
+          "type":"Date",
+          "example":""
+          
+      },
+      "Customer":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Destination":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Origin":{
+          "type":"Date",
+          "example":""
+          
+      },
+      "Consignee":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Consigner":{
+          "type":"String",
+          "example":""
+          
+      },
+      "ArrivalDate":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Packgs":{
+          "type":"Number",
+          "example":""
+          
+      },
+      "Weight":{
+          "type":"String",
+          "example":""
+          
+      },
+     
+      "DeliveryDate":{
+          "type":"Date",
+          "example":""
+          
+      },
+      "DeliveryTime":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Remark":{
+          "type":"String",
+          "example":""
+      }
+       }
+     }
   }
 }
