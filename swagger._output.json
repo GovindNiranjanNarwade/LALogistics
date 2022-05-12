@@ -25,6 +25,16 @@
         "name":"DeliveryBoy",
         "description":"DeliveryBoyDetails"
 
+      },
+      {
+        "name":"DRSDetails",
+        "description":"DRSDetails"
+
+      },
+      {
+        "name":"Enquiry",
+        "description":"EnquiryDetails"
+
       }
       
     ],
@@ -119,7 +129,7 @@
           {
             "id":"",
             "in":"body",
-            "name":"Product",
+            "name":"Customer",
             "type":"object",
             "example":{
               "CustomerId":""
@@ -152,7 +162,18 @@
           "produces": [
             "application/json"
           ],
-         
+         "parameters":[
+          {
+            "id":"",
+            "in":"body",
+            "name":"Customer",
+            "type":"object",
+            "example":{
+              "CustomerId":""
+            }
+
+          }
+         ],
           "responses": {
             "200": {
               "description": " Single Customer information.",
@@ -181,13 +202,18 @@
             "application/json"
           ],
           "parameters": [
-          {
-            "in":"body",
-            "name":"Customer",
-            "schema": {
-              "$ref": "#/definitions/Customer"
+          
+            {
+              "id":"",
+              "in":"body",
+              "name":"Customer",
+              "type":"object",
+              "example":{
+                "CustomerId":""
+              }
+  
             }
-          }
+          
            
           ],
           "responses": {
@@ -443,6 +469,7 @@
             "in":"body",
             "name":"Billing",
             "schema": {
+              "id":"",
               "$ref": "#/definitions/Billing"
             }
           }
@@ -924,6 +951,101 @@
             },
             "500": {
               "description": "Server Failure."
+            }
+          }
+        }
+      },
+      "/api/v1/enquiry/createEnquiry": {
+        "post": {
+          "tags": [
+            "Enquiry"
+          ],
+          "description": "Create Enquiry Details  ",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"Enquiry",
+                "schema": {
+                    "$ref": "#/definitions/Enquiry"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Enquiry"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
+      },
+      "/api/v1/enquiry/getEnquiry": {
+        "get": {
+          "tags": [
+            "Enquiry"
+          ],
+          "description": "get Enquiry Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Enquiry Details   Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/Enquiry"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/enquiry/deleteEnquiry/{id}": {
+        "delete": {
+          "tags": [
+            "Enquiry"
+          ],
+          "description": "Delete a Enquiry Details  ",
+          "parameters": [
+          {
+            "id":"",
+            "in":"body",
+            "name":"Enquiry",
+            "type":"object",
+            "example":{
+              "id":""
+            }
+
+          }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "$ref": "#/definitions/Enquiry"
+              },
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
             }
           }
         }
@@ -1419,6 +1541,29 @@
       "Remark":{
           "type":"String",
           "example":""
+      }
+       }
+     },
+     "Enquiry":{
+       "type":"object",
+       "properties":{
+        "Name":{
+          "type":"String", 
+          "example":""  
+      },
+      "Email":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Contact":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Message":{
+          "type":"String", 
+          "example":""   
       }
        }
      }
