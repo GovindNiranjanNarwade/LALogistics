@@ -168,6 +168,39 @@
         }
        
       },
+      "/api/v1/customer/updateCustomer/{id}":{
+        "put": {
+          "tags": [
+            "Customer"
+          ],
+          "description": "Edit Customer Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          {
+            "in":"body",
+            "name":"Customer",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+           
+          ],
+          "responses": {
+            "200": {
+            
+              "description": "Customer found update the Customer details."
+            },
+            "500": {
+              "description": "Server Failure."
+            }
+          }
+        }
+      },
       "/api/v1/Createadmin": {
         "post": {
           "tags": [
@@ -232,7 +265,7 @@
           }
         }
       },
-      "/api/v1/UserLogin": {
+      "/api/v1/adminlogin": {
         "post": {
           "tags": [
             "Admin"
@@ -344,7 +377,7 @@
           {
             "id":"",
             "in":"body",
-            "name":"Product",
+            "name":"Billing",
             "type":"object",
             "example":{
               "CustomerId":""
@@ -392,6 +425,39 @@
           }
         }
        
+      },
+      "/api/v1/billing/updateBillingDetails/{id}":{
+        "put": {
+          "tags": [
+            "Billing"
+          ],
+          "description": "Edit Billing Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          {
+            "in":"body",
+            "name":"Billing",
+            "schema": {
+              "$ref": "#/definitions/Billing"
+            }
+          }
+           
+          ],
+          "responses": {
+            "200": {
+            
+              "description": "Billing  Details found update the Billing details."
+            },
+            "500": {
+              "description": "Server Failure."
+            }
+          }
+        }
       },
       "/api/v1/CreateDeliveryBoyDetails": {
         "post": {
@@ -453,6 +519,98 @@
             },
             "404": {
               "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/deleteDeliveryBoyDetails/{id}": {
+        "delete": {
+          "tags": [
+            "DeliveryBoy"
+          ],
+          "description": "Delete a Delivery Boy Details",
+          "parameters": [
+          {
+            "id":"",
+            "in":"body",
+            "name":"DeliveryBoy",
+            "type":"object",
+            "example":{
+              "DeliveryBoyId":""
+            }
+
+          }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "$ref": "#/definitions/DeliveryBoy"
+              },
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/getSingleDeliveryBoyDetails/{id}":{
+        "get": {
+          "tags": [
+            "DeliveryBoy"
+          ],
+          "description": "Endpoint to get the specific DeliveryBoy Details.",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+         
+          "responses": {
+            "200": {
+              "description": " Single Delivery Boy information.",
+              "schema": {
+                "$ref": "#/definitions/DeliveryBoy"
+              }
+             
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+       
+      },
+      "/api/v1/updateDeliveryBoyDetails/{id}":{
+        "put": {
+          "tags": [
+            "DeliveryBoy"
+          ],
+          "description": "Edit Delivery Boy Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          {
+            "in":"body",
+            "name":"Billing",
+            "schema": {
+              "$ref": "#/definitions/DeliveryBoy"
+            }
+          }
+           
+          ],
+          "responses": {
+            "200": {
+            
+              "description": "Delivery Boy  Details found update the Delivery Boy details."
+            },
+            "500": {
+              "description": "Server Failure."
             }
           }
         }
