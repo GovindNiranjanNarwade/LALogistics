@@ -20,6 +20,11 @@
         "name":"Billing",
         "description":"BillingDetails"
 
+      },
+      {
+        "name":"DeliveryBoy",
+        "description":"DeliveryBoyDetails"
+
       }
       
     ],
@@ -211,11 +216,7 @@
             "application/json"
           ],
           "parameters": [
-            {
-              "schema":{
-
-              }
-            }
+          
           ],
           "responses": {
             "200": {
@@ -257,7 +258,6 @@
                   }
             }    
         ],
-
           "responses": {
             "201": {
               "description": "Created"
@@ -358,6 +358,98 @@
                 "$ref": "#/definitions/Billing"
               },
               "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/billing/getSingleBillingDetails/{id}":{
+        "get": {
+          "tags": [
+            "Billing"
+          ],
+          "description": "Endpoint to get the specific Billing Details.",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+         
+          "responses": {
+            "200": {
+              "description": " Single Billing information.",
+              "schema": {
+                "$ref": "#/definitions/Billing"
+              }
+             
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+       
+      },
+      "/api/v1/CreateDeliveryBoyDetails": {
+        "post": {
+          "tags": [
+            "DeliveryBoy"
+          ],
+          "description": "Create Delivery Boy Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"DeliveryBoy",
+                "schema": {
+                    "$ref": "#/definitions/DeliveryBoy"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/DeliveryBoy"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
+      },
+      "/api/v1/getDeliveryBoyDetails": {
+        "get": {
+          "tags": [
+            "DeliveryBoy"
+          ],
+          "description": "get DeliveryBoy Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Delivery Boy Details Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/DeliveryBoy"
+                  }
             },
             "404": {
               "description": "Not Found"
@@ -540,7 +632,50 @@
             "example":""
         }
         }
-      }
-      
+      },
+     "DeliveryBoy":{
+"type":"object",
+"properties":{
+  "DeliveryBoyId":{
+    "type":"String",
+    "example":""
+    
+},
+"DeliveryBoyName":{
+ "type":"String",
+ "example":""
+},
+"DeliveryBoyEmail":{
+    "type":"String",
+    "example":""
+  
+},
+"DeliveryBoyMobile":{
+    "type":"Number",
+    "example":""
+    
+},
+"DeliveryBoyPassword":{
+    "type":"String",
+    "example":""
+    
+},
+"DeliveryBoyAddress":{
+    "type":"String",
+    "example":""
+    
+},
+"DeliveryBoyCity":{
+    "type":"String",
+    "example":""
+    
+},
+"DeliveryBoyState":{
+    "type":"String",
+    "example":""
+    
+}
+}
+     } 
   }
 }
