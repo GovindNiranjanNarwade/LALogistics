@@ -614,6 +614,162 @@
             }
           }
         }
+      },
+      "/api/v1/docket/CreateDocketDetails": {
+        "post": {
+          "tags": [
+            "Docket"
+          ],
+          "description": "Create Docket  Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"Docket",
+                "schema": {
+                    "$ref": "#/definitions/Docket"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Docket"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
+      },
+      "/api/v1/docket/getDocketDetails": {
+        "get": {
+          "tags": [
+            "Docket"
+          ],
+          "description": "get Docket Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Docket  Details Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/Docket"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/docket/deleteDocket/{id}": {
+        "delete": {
+          "tags": [
+            "Docket"
+          ],
+          "description": "Delete a Docket  Details",
+          "parameters": [
+          {
+            "id":"",
+            "in":"body",
+            "name":"Docket",
+            "type":"object",
+            "example":{
+              "DocketId":""
+            }
+
+          }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "$ref": "#/definitions/Docket"
+              },
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/docket/getSingleDocket/{id}":{
+        "get": {
+          "tags": [
+            "Docket"
+          ],
+          "description": "Endpoint to get the specific Docket Details.",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+         
+          "responses": {
+            "200": {
+              "description": " Single Docket  information.",
+              "schema": {
+                "$ref": "#/definitions/Docket"
+              }
+             
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+       
+      },
+      "/api/v1/docket/updateDocket/{id}":{
+        "put": {
+          "tags": [
+            "Docket"
+          ],
+          "description": "Edit Docket  Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          {
+            "in":"body",
+            "name":"Docket",
+            "schema": {
+              "$ref": "#/definitions/Docket"
+            }
+          }
+           
+          ],
+          "responses": {
+            "200": {
+            
+              "description": "Docket  Details found update the Docket details."
+            },
+            "500": {
+              "description": "Server Failure."
+            }
+          }
+        }
       }
       
 
@@ -834,6 +990,156 @@
     
 }
 }
+     },
+     "Docket":{
+       "type":"object",
+       "properties":{
+        "DocketId":{
+          "type":"String",
+          "example":""
+          
+      },
+      "CustomerId":{
+          "type":"String",
+          "example":""
+        
+      },
+      "ConsignerCompany":{
+          "type":"String",
+          "example":""
+          
+      },
+      "FullName":{
+          "type":"String",
+          "example":""
+         },
+      "Mobile":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Email":{
+          "type":"String",
+          "example":""
+          
+      },
+      "NoOfPacking":{
+          "type":"Number",
+          "example":""
+          
+      },
+      "MethodOfPacking":{
+          "type":"String",
+          "example":""
+          
+      },
+      "ActualWeight":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Volume":{
+          "type":"String",
+          "example":""
+          
+      },
+      "BoxType":{
+          "type":"String",
+          "example":""
+          
+      },
+      "ShipingDate":{
+          "type":"String",
+          "example":""
+          
+      },
+      "DeliveryDate":{
+          "type":"String",
+          "example":""
+          
+      },
+      "AMB":{
+          "type":"String",
+          "example":""
+          
+      },
+      "REF":{
+          "type":"String",
+          "example":""
+          
+      },
+      "FRZ":{
+          "type":"String",
+          "example":""
+          
+      },
+      "DRYICE":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Pkg":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Origin":{
+          "type":"String",
+          "example":""
+          
+      },
+      "Destination":{
+          "type":"String",
+          "example":""
+          
+      },
+      "PickupAddress":{
+        "Flat":{
+            "type":"String",
+            "example":""
+        },
+        "State":{
+          "type":"String",
+          "example":""
+      },
+      "City":{
+          "type":"String",
+          "example":""
+      },
+      "Pincode":{
+          "type":"String",
+          "example":""
+      }
+  
+          
+      },
+      "DestinationAddress":{
+          "Flat":{
+              "type":"String",
+              "example":""
+          },
+          "ReviewName":{
+            "type":"String",
+            "example":""
+        },
+        "ReviewMobile":{
+            "type":"String",
+            "example":""
+        },
+        "State":{
+            "type":"String",
+            "example":""
+        },
+        "City":{
+         "type":"String",
+         "example":""
+        },
+        "Pincode":{
+            "type":"String",
+            "example":""
+        }
+      }
+       }
      } 
   }
 }
