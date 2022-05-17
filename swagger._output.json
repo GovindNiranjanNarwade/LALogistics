@@ -1272,7 +1272,7 @@
             "name":"InscanDetails",
             "type":"object",
             "example":{
-              "":""
+              "id":""
             }
 
           }
@@ -1622,7 +1622,7 @@
             "name":"Customer",
             "type":"object",
             "example":{
-              "":""
+              "id":""
             }
 
           }
@@ -2110,7 +2110,7 @@
           "example":""
           
       },
-      "":{
+      "status":{
           "type":"String",
           "example":""
         

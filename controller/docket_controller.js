@@ -82,3 +82,19 @@ exports.getSingleDocket = async(req,res)=>{
         })  
     }
 }
+exports.SearchDocketByStatus = async(req,res)=>{
+    try {
+        const result = await docket.findById(req.body.status)
+        res.json({
+            success:true,
+            message:"Search  Docket  Details By Status",
+            data:result
+        })
+    } catch (error) {
+        res.json({
+            success:false,
+            message:"Something  went wrong",
+            data:null
+        })  
+    }
+}
