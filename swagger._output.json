@@ -851,10 +851,59 @@
           "produces": [
             "application/json"
           ],
-         
+         "parameters":[
+          {
+            
+            "in":"body",
+            "name":"Docket",
+            "type":"object",
+            "example":{
+              "id":""
+            }
+          }
+         ],
           "responses": {
             "200": {
               "description": " Single Docket  information.",
+              "schema": {
+                "$ref": "#/definitions/Docket"
+              }
+             
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+       
+      },
+      "/api/v1/SearchDocketByStatus/status":{
+        "get": {
+          "tags": [
+            "Docket"
+          ],
+          "description": "Endpoint to get the specific Docket Details by a status.",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+         "parameters":[
+          {
+            
+            "in":"body",
+            "name":"Docket",
+            "type":"object",
+            "example":{
+              "status":""
+            }
+          }
+         ],
+
+          "responses": {
+            "200": {
+              "description": " Single Docket  information by status.",
               "schema": {
                 "$ref": "#/definitions/Docket"
               }
