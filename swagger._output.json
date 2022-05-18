@@ -124,11 +124,7 @@
             "application/json"
           ],
           "parameters": [
-            {
-              "schema":{
-
-              }
-            }
+          
           ],
           "responses": {
             "200": {

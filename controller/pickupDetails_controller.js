@@ -48,3 +48,19 @@ exports.createPickupDetails=async (req,res)=>{
                 })
             }
             }
+            exports.allocationbyVendor= async(req,res)=>{
+                try {
+                   const result = await PickupDetails.findById(req.params.id)
+                   res.json({
+                    success:true,
+                    message:"allocate the  Pickup Details",
+                    data:result
+                })
+                } catch {
+                    res.json({
+                        success:true,
+                        message:"Something Went Worng",
+                        data:null
+                    })
+                }
+                }
