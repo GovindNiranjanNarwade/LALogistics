@@ -1795,6 +1795,36 @@
           }
         }
       },
+      "/api/v1/allocationbyvendor/{id}": {
+        "get": {
+          "tags": [
+            "PickupDetails"
+          ],
+          "description": "get allocation  Pickup Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "schema":{
+"id":""
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": " get allocation Pickup Details  Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/PickupDetails"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
       "/api/v1/deletePickupDetails/{id}": {
         "delete": {
           "tags": [
