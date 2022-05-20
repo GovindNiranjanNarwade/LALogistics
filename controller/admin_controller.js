@@ -1,8 +1,13 @@
 const admin = require("../model/admin_model")
-// const bcrypt = require("bcryptjs")
+const bcrypt = require("bcryptjs")
 exports.CreateAdminDetails = async(req,res)=>{
     try {
-        const result = await admin.create(req.body)
+        const result = await admin.create({
+            Name:req.body.Name,
+            Email:req.body.Email,
+            Password:bcrypt.hashSync(req.body.Password,10),
+           
+        })
         res.json({
             success:true,
             message:"create  Admin Details",
