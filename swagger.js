@@ -41,21 +41,7 @@ const doc = {
             Username: req.body.Username,
             UserEmail: req.body.UserEmail,
             
-            // parents: {
-            //     father: "Simon Doe",
-            //     mother: "Marie Doe"
-            // },
-            // diplomas: [
-            //     {
-            //         school: "XYZ University",
-            //         year: 2020,
-            //         completed: true,
-            //         internship: {
-            //             hours: 290,
-            //             location: "XYZ Company"
-            //         }
-            //     }
-            // ]
+            
         },
      
     }
