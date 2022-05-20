@@ -1954,6 +1954,71 @@
             }
           }
         }
+      },
+      "/api/v1/getGruopDetails": {
+        "get": {
+          "tags": [
+            "Group"
+          ],
+          "description": "get Group Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Group Details Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/Group"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/v1/createGruopDetails": {
+        "post": {
+          "tags": [
+            "Group"
+          ],
+          "description": "Create Group Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "type":"object",
+                "required":true,
+                "name":"Group",
+                "schema": {
+                    "$ref": "#/definitions/Group"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Group"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
       }
      
           
@@ -2898,6 +2963,21 @@
         "file":{
     "type":"String",
     "example":""
+        }
+        }
+      },
+      "Group":{
+        "type":"object",
+        "properties":{
+          "GroupName":{
+            "type":"String",
+            "example":""
+            
+        },
+        "GroupId":{
+            "type":"Number",
+            "example":""
+           
         }
         }
       }

@@ -13,7 +13,7 @@ router.route("/deleteGruopDetails/:id").delete(deleteGruopDetails)
 router.route("/updateGruopDetails/:id").put(updateGruopDetails)
 // route http://192.168.43.220:37234/api/v1/updateGruopDetails
 //method put
-router.route("/getSingleGruopDetails/:id").get(getSingleGruopDetails)
+router.route("/getSingleGruopDetails/:GroupId").get(getSingleGruopDetails)
 // route http://192.168.43.220:37234/api/v1/getSingleGruopDetails
 //method get
 

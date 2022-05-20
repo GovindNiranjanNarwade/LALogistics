@@ -68,7 +68,8 @@ exports.getGruopDetails= async(req,res)=>{
         }
         exports.getSingleGruopDetails = async(req,res)=>{
             try {
-                const result = await GruopDetails.findById(req.params.id)
+                const result = await GruopDetails.findById(req.body.GroupId)
+                console.log(result);
                 res.json({
                     success:true,
                     message:"get a Single Gruop Details",
@@ -77,7 +78,7 @@ exports.getGruopDetails= async(req,res)=>{
             } catch (error) {
                 res.json({
                     success:false,
-                    message:"Something  went wrong",
+                    message:"Something  went wrong" + Error,
                     data:null
                 })  
             }
