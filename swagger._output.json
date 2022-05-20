@@ -2013,6 +2013,10 @@
       "Admin":{
         "type":"object",
 "properties":{
+  "GroupId":{
+    "type":"Number",
+    "example":""
+  },
   "Name":{
     "type":"String",
     "example":""
