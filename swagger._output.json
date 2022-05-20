@@ -333,8 +333,8 @@
                     "name":"Admin",
                    "type":"object",
                     "example":{
-                      "email":"",
-                      "password":""
+                      "Email":"",
+                      "Password":""
                     }
                   }
             }    
