@@ -89,6 +89,7 @@
           "parameters": [
             {
                 "in":"body",
+                "type":"object",
                 "required":true,
                 "name":"Customer",
                 "schema": {
@@ -1962,7 +1963,7 @@
     },
     "definitions": {
       "Customer":{
-        "type":"object",
+       
         "properties":{
         "CustomerName":{
          "type":"String",

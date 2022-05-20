@@ -3,8 +3,8 @@ brycpt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const Adminlogin = async(req,res) =>{
     try {
-     const {email,password} = req.body
-     const result = await admin.findOne({email}) 
+     const {Email,Password} = req.body
+     const result = await admin.findOne({Email}) 
      if(!result){
          return res.json({
              success:false,
@@ -14,7 +14,7 @@ const Adminlogin = async(req,res) =>{
          })
         }
     //  email found
-     const verify = await brycpt.compare(password,result.password)  
+     const verify = await brycpt.compare(Password,result.Password)  
      if(!verify){
         return res.json({
             success:false,
