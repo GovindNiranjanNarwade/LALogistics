@@ -17,6 +17,9 @@ const adminSchema = mongoose.Schema({
         type:String,
         
     },
+    GroupId:{
+        type:Number
+    }
     
 
 },{

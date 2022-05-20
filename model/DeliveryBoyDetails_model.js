@@ -32,7 +32,9 @@ const DeliveryBoyDetailsSchema = mongoose.Schema({
         type:String,
         
     },
-   
+    GroupId:{
+        type:Number
+    }
 
 },{
 timestamps:true

@@ -1965,6 +1965,10 @@
       "Customer":{
        
         "properties":{
+          "GroupId":{
+            "type":"String",
+            "example":""
+           },
         "CustomerName":{
          "type":"String",
          "example":""
@@ -2132,6 +2136,10 @@
      "DeliveryBoy":{
 "type":"object",
 "properties":{
+  "GroupId":{
+    "type":"Number",
+    "example":""
+  },
   "DeliveryBoyId":{
     "type":"String",
     "example":""
@@ -2637,6 +2645,10 @@
       "Office":{
         "type":"object",
         "properties":{
+          "GroupId":{
+            "type":"Number",
+            "example":""
+          },
           "AdminName":{
             "type":"String",
             "example":""
