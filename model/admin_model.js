@@ -1,6 +1,9 @@
 const mongoose = require("mongoose")
 
 const adminSchema = mongoose.Schema({
+    GroupId:{
+        type:Number
+    },
     Name:{
         type:String,
         
@@ -17,9 +20,7 @@ const adminSchema = mongoose.Schema({
         type:String,
         
     },
-    GroupId:{
-        type:Number
-    }
+  
     
 
 },{
