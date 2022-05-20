@@ -1964,11 +1964,6 @@
       "Customer":{
         "type":"object",
         "properties":{
-          "":{
-            "type":"String",
-            "example":""
-            
-        },
         "CustomerName":{
          "type":"String",
          "example":""
@@ -1983,7 +1978,7 @@
             "example":""
             
         },
-        "Password":{
+        "State":{
             "type":"String",
             "example":""
             
@@ -2013,16 +2008,16 @@
       "Admin":{
         "type":"object",
 "properties":{
-  "name":{
+  "Name":{
     "type":"String",
     "example":""
     
 },
-"email":{
+"Email":{
     "type":"String",
     "example":""
 },
-"password":{
+"Password":{
     "type":"String",
     "example":""
 }

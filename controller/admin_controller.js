@@ -1,11 +1,11 @@
 const admin = require("../model/admin_model")
 const bcrypt = require("bcryptjs")
-exports.CreateAdmin = async(req,res)=>{
+exports.CreateAdminDetails = async(req,res)=>{
     try {
         const result = await admin.create({
-            name:req.body.name,
-            email:req.body.email,
-            password:bcrypt.hashSync(req.body.password,10)
+            Name:req.body.Name,
+            Email:req.body.Email,
+            Password:bcrypt.hashSync(req.body.Password,10)
         })
         res.json({
             success:true,
@@ -15,7 +15,7 @@ exports.CreateAdmin = async(req,res)=>{
     } catch (error) {
         res.json({
             success:false,
-            message:"Something  went wrong",
+            message:"Something  went wrong"+Error,
             data:null
         })  
     }

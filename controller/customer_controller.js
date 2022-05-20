@@ -2,17 +2,7 @@ const customer = require("../model/customer_model")
 const bcrypt = require("bcryptjs")
 exports.CreateCustomer = async(req,res)=>{
     try {
-        const result = await customer.create({
-            CustomerId:req.body.CustomerId,
-            CustomerName:req.body.CustomerName,
-            Email:req.body.Email,
-            Mobile:req.body.Mobile,
-            Password:bcrypt.hashSync(req.body.Password,10),
-            BillingAddress:req.body.BillingAddress,
-            City:req.body.City,
-            CompanyName:req.body.CompanyName,
-            GstNo:req.body.GstNo
-        })
+        const result = await customer.create(req.body)
         res.json({
             success:true,
             message:"Create Customer Details",

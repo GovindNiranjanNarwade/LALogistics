@@ -1,15 +1,15 @@
 const mongoose = require("mongoose")
 
 const adminSchema = mongoose.Schema({
-    name:{
+    Name:{
         type:String,
         
     },
-    email:{
+    Email:{
         type:String,
        
     },
-    password:{
+    Password:{
         type:String,
         
     },
@@ -17,11 +17,7 @@ const adminSchema = mongoose.Schema({
         type:String,
         
     },
-    isAdmin:{
-        type:Boolean,
-        
-        default:false
-    },
+    
 
 },{
 timestamps:true

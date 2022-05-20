@@ -16,7 +16,7 @@ const customerSchema = mongoose.Schema({
         type:Number,
         
     },
-    Password:{
+    State:{
         type:String,
         
     },
