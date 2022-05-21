@@ -2206,7 +2206,7 @@
 "type":"object",
 "properties":{
   "GroupId":{
-    "type":"Number",
+    "type":"String",
     "example":""
   },
   "DeliveryBoyId":{
@@ -2975,7 +2975,7 @@
             
         },
         "GroupId":{
-            "type":"Number",
+            "type":"String",
             "example":""
            
         }

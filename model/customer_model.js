@@ -37,7 +37,7 @@ const customerSchema = mongoose.Schema({
         
     },
     GroupId:{
-        type:Number
+        type:String
     }
 
 },{
