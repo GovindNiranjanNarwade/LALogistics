@@ -5,14 +5,14 @@ env.config({path:"../config/.env"})
 const db = require("../config/db")
 
 //data files
-const admin =require("./data/admin")
+const state =require("./data/state")
 //model
-   const adminModel = require("../model/admin_model")
+   const StateModel = require("../model/state_model")
     const insertData = async()=>{
         try {
           db()
-          await adminModel.deleteMany()
-          const result = await adminModel.create(admin)
+          await StateModel.deleteMany()
+          const result = await StateModel.create(state)
          console.log(result);
           console.log("DATA INSERT SUCCESSFULLY".bgGreen.yellow);
         //   console.log(sampleData);
@@ -20,7 +20,7 @@ const admin =require("./data/admin")
        
            process.exit()
         } catch (error) {
-            console.log(`ERROR:${error}`);
+            console.log("Error"+Error);
             process.exit()
         }
       
@@ -33,7 +33,7 @@ const admin =require("./data/admin")
           await adminModel.deleteMany()
            process.exit()
         } catch (error) {
-            console.log('ERROR:${error}');
+            console.log("Error"+Error);
             process.exit()
         }
       
