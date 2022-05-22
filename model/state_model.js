@@ -2,15 +2,10 @@ const mongoose = require("mongoose")
 
 const stateSchema = mongoose.Schema({
  
-    State:{
-        City:{
-            type:String
-        }
+    City:{
+        type:String
     }
-    
-   
-  
-    
+       
 
 },{
 timestamps:true

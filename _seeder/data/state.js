@@ -1,5 +1,6 @@
-const State =[{
-	Maharashtra:{
+const state =[
+	// Maharashtra:
+	{
 		City:"Ahmednagar",
 			City:"Akola",	
 			City:"Amravati",	
@@ -36,10 +37,12 @@ const State =[{
 			City:"Washim",	
 			City:"Yavatma",
 	  },
-	  AndamanAndNicobar:{
+	//   AndamanAndNicobar:
+	  {
 		City:"PortBlair"
 	  } ,
-	AndhraPrades:{
+	// AndhraPrades:
+	{
 		City:"Anantapur"	,
 			City:"Chittoor",	
 			City:"EastGodavari",	
@@ -55,7 +58,8 @@ const State =[{
 			City:"YSR"	
 		
 	},
-	ArunachalPradesh:{
+	// ArunachalPradesh:
+	{
 			City:"Anjaw",	
 			City:"Changlang",
 			City:"EastKameng",	
@@ -82,7 +86,8 @@ const State =[{
 			City:"WestKameng",	
 			City:"WestSiang",
 	},
-	Assam:{
+	// Assam:
+	{
 		City:"Nagaon"	,
 		City:	"Dhubri"	,
 		City:	"Sonitpur",	
@@ -91,7 +96,8 @@ const State =[{
 		City:	"Kamrup",
 		City:	"Tinsukia" 
 	},
-	Bihar:{
+	// Bihar:
+	{
 		City:"Araria",	
 			City:"Arwal",	
 			City:"Aurangabad",
@@ -131,19 +137,23 @@ const State =[{
 			City:"Vaishali",	
 			City:"WestChamparan",
 	},
-	Chandigarh:{
+	// Chandigarh:
+	{
 		City: "Chandigarh"
 	},
 	
-	DadraAndNagarHaveli:{
+	// DadraAndNagarHaveli:
+	{
 		City:"DadraandNagarHaveli"	,
 			
 	},
-	DamanandDiu:{
+	// DamanandDiu:
+	{
 		City:"Daman",	
 		City:"Diu"
 	},
-	Delhi:{
+	// Delhi:
+	{
 			
 	City:"CentralDelhi",
 	
@@ -153,20 +163,23 @@ const State =[{
 	
 	City:"NorthDelhi",
 	},
-	Goa:{
+	// Goa:
+	{
 		City:"NorthGoa",
 		City:"SouthGoa",
 		City:"Panaji",
 		City:"Margao"
 	},
-	Gujarat:{
+	// Gujarat:
+	{
 	 City:"Gandhinagar",   	
 	City:"Ahmedabad",
 	City:"Amreli",
 	City:"Anand",
 	City:"Aravalli"
 	},
-	Haryana:{
+	// Haryana:
+	{
 			
 	City:"Ambala",
 	City:"Bhiwani",
@@ -174,7 +187,8 @@ const State =[{
 	City:"Faridabad"
 	
 	},
-	HimachalPradesh:{
+	// HimachalPradesh:
+	{
 		City:"Bilaspur" ,
 		City:"Chamba",
 		City:"Hamirpur",	
@@ -188,7 +202,8 @@ const State =[{
 		City:"Solan",	
 		City:"Una"
 	},
-	JammuandKashmir:{
+	// JammuandKashmir:
+	{
 	   City: "Kathua"	,
 	City:"Jammu" ,
 	City:"Samba" ,
@@ -200,7 +215,8 @@ const State =[{
 	City:"Ramban" 	,	
 	City:"Kishtwar" ,	
 	},
-	Jharkhand:{
+	// Jharkhand:
+	{
 		City:"Anantnag",
 	City:"Kulgam",
 	City:"Pulwama" ,
@@ -212,7 +228,8 @@ const State =[{
 	City:"Baramulla",
 	City:"Kupwara" ,
 	},
-	Karnataka:{
+	// Karnataka:
+	{
 	  City:  "Bagalkote",
 	City:"Belagavi" ,
 	City:"Dharwada",
@@ -221,7 +238,8 @@ const State =[{
 	City:"UttaraKannada",
 	City:"Vijayapura"
 	},
-	Kerala:{
+	// Kerala:
+	{
 			
 		City:"Alappuzha",
 	City:"Ernakulam",
@@ -230,14 +248,16 @@ const State =[{
 	City:"Painavu",
 	City:"Kannur"
 	},
-	Lakshadweep:{
+	// Lakshadweep:
+	{
 		City:"Lakshadweep" ,
 	City:"Amini",
 	City:"Andrott",
 	City:"Kadmat",
 	City:"Kalpeni",
 	},
-	MadhyaPradesh:{
+	// MadhyaPradesh:
+	{
 	   City: "Indore"	,
 			City:"Bhopal",
 			City:"Jabalpur",
@@ -274,7 +294,8 @@ const State =[{
 			City:"Dindori",
 	},
 	
-	Manipur:{
+	// Manipur:
+	{
 		City:"Andro",
 		City:"NagarPanchayat",
 		City:"ImphalEast",
@@ -285,7 +306,8 @@ const State =[{
 		City:"ImphalEast",
 		City:"Heingang" 
 	},
-	Meghalaya:{
+	// Meghalaya:
+	{
 		City:"Khasi" ,			
 	City:"EastKhasi" ,	
 	City:"Shillong",	
@@ -314,7 +336,8 @@ const State =[{
 	City:"Sou",
 	
 	},
-	Mizoram:{
+	// Mizoram:
+	{
 		City:"Aizawl" ,
 		City:"Kolasib",
 		City:"Lawngtlai",
@@ -327,7 +350,8 @@ const State =[{
 		City:"Khawzawl",
 		City:"Saitual"
 	},
-	Nagaland:{
+	// Nagaland:
+	{
 		City:"Chümoukedima" ,
 	City:"Dimapur",
 	City:"Kiphire" ,
@@ -345,7 +369,8 @@ const State =[{
 	City:"Zünheboto" ,
 	City:"Noklak" 
 	},
-	Orissa:{
+	// Orissa:
+	{
 	   City: "Cuttack",
 			City:"Sambalpur",
 				City:"Ganjam",
@@ -376,13 +401,15 @@ const State =[{
 		City:"Mayurbhanj",
 	
 	},
-	Puducherry:{
+	// Puducherry:
+	{
 		City:"Karaikal"
 	,	City:"Mahe"
 	,	City:"Puducherry"
 	,	City:"Yanam"
 	,},
-	Punjab:{
+	// Punjab:
+	{
 		City:"Amritsar"	
 	,	City:"Barnala"
 	,City:"Bathinda"
@@ -407,7 +434,8 @@ const State =[{
 	,	City:"Shahid" 
 	,	City:"Tarn" 
 	},
-	Rajasthan:{
+	// Rajasthan:
+	{
 	   City: "Ajmer",
 	City:"Alwar"	,
 	City:"Banswara",
@@ -442,7 +470,8 @@ const State =[{
 	City:"Tonk",
 	City:"Udaipur"
 	},
-	Sikkim:{
+	// Sikkim:
+	{
 		City:"EastSikkim"	,
 		City:"Gangtok" ,
 		City:"NorthSikkim",
@@ -452,7 +481,8 @@ const State =[{
 		City:"WestSikkim",
 		City:"Geyzing"
 	},
-	TamilNadu:{
+	// TamilNadu:
+	{
 	   City: "Ariyalur"
 	,City:"Chengalpattu"
 	,City:"Chennai"
@@ -492,7 +522,8 @@ const State =[{
 	,	City:"Viluppuram"	
 	,	City:"Virudhunagar"
 	},
-	Telangana:{
+	// Telangana:
+	{
 		City:"Adilabad"	,
 		City:"KumuramBheem",
 		City:"Mancherial",	
@@ -528,7 +559,8 @@ const State =[{
 		City:"Wanaparthy",
 		City:"JogulambaGadwal",
 	},
-	Tripura:{
+	// Tripura:
+	{
 	   City: "Dhalai",
 			City:"Ambassa",
 			City:"Gomati",
@@ -545,7 +577,8 @@ const State =[{
 			City:"Kailashahar"	,
 			City:"WestTripura"	
 	},
-	UttarPradesh:{
+	// UttarPradesh:
+	{
 		City:"Agra",
 			City:"Aligarh"	,
 		City:"Aligarh"	,
@@ -628,7 +661,8 @@ const State =[{
 	,    	City:"Unnao"
 	,    	City:"Varanasi"
 	,},
-	Uarakhand:{
+	// Uarakhand:
+	{
 		City:"Almora"	,
 		City:"Bageshwar"	,
 		City:"Chamoli"
@@ -644,7 +678,8 @@ const State =[{
 		City:"Rudrapur",
 		City:"Uttarkashi"
 	},
-	WestBengal:{
+	// WestBengal:
+	{
 	   City: "Alipurduar"	,
 		City:"Bankura"	,
 		City:"Birbhum",
@@ -669,5 +704,5 @@ const State =[{
 	,	City:"South"
 	,	City:"UttarDinajpur"
 	}
-}]
+]
   

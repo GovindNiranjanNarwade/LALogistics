@@ -13,14 +13,17 @@ const state =require("./data/state")
           db()
           await StateModel.deleteMany()
           const result = await StateModel.create(state)
+          const sampleData = state.map(item => {
+            return {item}
+        })
+         console.log(sampleData);
          console.log(result);
           console.log("DATA INSERT SUCCESSFULLY".bgGreen.yellow);
-        //   console.log(sampleData);
-        //   console.log(result);
+        
        
            process.exit()
         } catch (error) {
-            console.log("Error"+Error);
+            console.log("Error"+ Error);
             process.exit()
         }
       
@@ -30,7 +33,7 @@ const state =require("./data/state")
     const deleteData = async()=>{
         try {
           db()
-          await adminModel.deleteMany()
+          await StateModel.deleteMany()
            process.exit()
         } catch (error) {
             console.log("Error"+Error);
