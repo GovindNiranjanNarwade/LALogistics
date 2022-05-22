@@ -2030,8 +2030,10 @@
       "Customer":{
        
         "properties":{
-          "GroupId":{
-            "type":"String",
+          "Group":{
+            "type":"mongoose.Types.ObjectId",
+            "required":true,
+            "ref":"Group",
             "example":""
            },
         "CustomerName":{

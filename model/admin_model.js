@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const adminSchema = mongoose.Schema({
-    GroupId:{
+    Group:{
         type:mongoose.Types.ObjectId,
         required:true,
         ref:"Group"

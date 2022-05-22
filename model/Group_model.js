@@ -5,8 +5,8 @@ const GroupSchema = mongoose.Schema({
         type:String,
         
     },
-    GroupId:{
-        type:Number,
+    Group:{
+        type:String,
        
     },
   
