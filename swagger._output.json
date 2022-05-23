@@ -2045,6 +2045,32 @@
             }
           }
         }
+      },
+      "/api/v1/getAllCity":{
+        "get": {
+          "tags": [
+            "city"
+          ],
+          "description": "get city Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "city Details Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/city"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
       }
      
           
@@ -3015,19 +3041,41 @@
         "type":"object",
         "properties":{
           "name":{
-            "type":"String"
+            "type":"String",
+            "example":""
         },
         "isoCode":{
-            "type":"String"
+            "type":"String",
+            "example":""
         },
         "countryCode":{
-            "type":"String"
+            "type":"String",
+            "example":""
         },
         "latitude":{
-            "type":"String"
+            "type":"String",
+            "example":""
         },
         "longitude":{
-            "type":"String"
+            "type":"String",
+            "example":""
+        }
+        }
+      },
+      "city":{
+        "type":"object",
+        "properties":{
+          "id":{
+            "type":"Number",
+            "example":""
+        },
+        "name":{
+            "type":"String",
+            "example":""
+        },
+        "state":{
+            "type":"String",
+            "example":""
         }
         }
       }
