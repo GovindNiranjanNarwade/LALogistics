@@ -2019,6 +2019,32 @@
 
         }
         }
+      },
+      "/api/v1/getStateWithCity": {
+        "get": {
+          "tags": [
+            "state"
+          ],
+          "description": "get state Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "state Details Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/state"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
       }
      
           
@@ -2982,6 +3008,26 @@
             "type":"String",
             "example":""
            
+        }
+        }
+      },
+      "state":{
+        "type":"object",
+        "properties":{
+          "name":{
+            "type":"String"
+        },
+        "isoCode":{
+            "type":"String"
+        },
+        "countryCode":{
+            "type":"String"
+        },
+        "latitude":{
+            "type":"String"
+        },
+        "longitude":{
+            "type":"String"
         }
         }
       }

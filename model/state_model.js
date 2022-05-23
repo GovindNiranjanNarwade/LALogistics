@@ -1,13 +1,22 @@
 const mongoose = require("mongoose")
 
 const stateSchema = mongoose.Schema({
-    state:{
+    name:{
         type:String
     },
- 
-    City:{
+    isoCode:{
+        type:String
+    },
+    countryCode:{
+        type:String
+    },
+    latitude:{
+        type:String
+    },
+    longitude:{
         type:String
     }
+
        
 
 },{
