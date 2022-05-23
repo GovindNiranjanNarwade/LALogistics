@@ -16,6 +16,8 @@ const state =require("./data/state")
           const sampleData = state.map(item => {
             return {...item}
         })
+        console.log(sampleData);
+        console.log(result);
       
           console.log("DATA INSERT SUCCESSFULLY".bgGreen.yellow);
         

@@ -6,6 +6,7 @@ exports.CreateAdminDetails = async(req,res)=>{
             Name:req.body.Name,
             Email:req.body.Email,
             Password:bcrypt.hashSync(req.body.Password,10),
+            Group:req.body.Group
            
         })
         res.json({

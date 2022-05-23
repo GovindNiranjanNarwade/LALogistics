@@ -1,6 +1,9 @@
 const mongoose = require("mongoose")
 
 const stateSchema = mongoose.Schema({
+    state:{
+        type:String
+    },
  
     City:{
         type:String
