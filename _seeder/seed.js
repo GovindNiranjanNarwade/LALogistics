@@ -14,10 +14,9 @@ const state =require("./data/state")
           await StateModel.deleteMany()
           const result = await StateModel.create(state)
           const sampleData = state.map(item => {
-            return {item}
+            return {...item}
         })
-         console.log(sampleData);
-         console.log(result);
+      
           console.log("DATA INSERT SUCCESSFULLY".bgGreen.yellow);
         
        

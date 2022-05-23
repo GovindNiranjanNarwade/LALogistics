@@ -1,7 +1,7 @@
 const state =[
 	// Maharashtra:
 	{
-		City:"Ahmednagar",
+		  City:"Ahmednagar",
 			City:"Akola",	
 			City:"Amravati",	
 			City:"Aurangabad",	
