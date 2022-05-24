@@ -1,4 +1,5 @@
 const admin = require("../model/admin_model")
+const Group = require("../model/Group_model")
 const bcrypt = require("bcryptjs")
 exports.CreateAdminDetails = async(req,res)=>{
     try {
@@ -6,7 +7,7 @@ exports.CreateAdminDetails = async(req,res)=>{
             Name:req.body.Name,
             Email:req.body.Email,
             Password:bcrypt.hashSync(req.body.Password,10),
-            Group:req.body.Group
+            GroupId:req.body.GroupId
            
         })
         res.json({

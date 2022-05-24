@@ -16,3 +16,20 @@ exports.getAllCity = async(req,res)=>{
         })  
     }
 }
+exports.getCityBytheirState = async(req,res)=>{
+    try {
+        const result = await city.find(req.params.state)
+        res.json({
+            count:result.length,
+            success:true,
+            message:"All city with their specific  State",
+            data:result
+        })
+    } catch (error) {
+        res.json({
+            success:false,
+            message:"Something  went wrong"+Error,
+            data:null
+        })  
+    }
+}

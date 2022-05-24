@@ -2083,7 +2083,7 @@
        
         "properties":{
           "Group":{
-            "type":"mongoose.Types.ObjectId",
+            "type":"Number",
             "required":true,
             "ref":"Group",
             "example":""
@@ -2133,7 +2133,7 @@
         "type":"object",
 "properties":{
   "GroupId":{
-    "type":"mongoose.Types.ObjectId",
+    "type":"Number",
     "required":true,
     "ref":"Group",
     "example":""
@@ -2262,7 +2262,7 @@
 "type":"object",
 "properties":{
   "GroupId":{
-    "type":"String",
+    "type":"Number",
     "example":""
   },
   "DeliveryBoyId":{
