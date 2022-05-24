@@ -7,7 +7,7 @@ exports.createOfficeAdmin = async(req,res)=>{
             Email:req.body.Email,
             Role:req.body.Role,
             Mobile:req.body.Mobile,
-            Password:req.body.Password,
+            Password:bcrypt.hashSync(req.body.Password,10),
             Address:req.body.Address,
             City:req.body.City,
             State:req.body.State,
