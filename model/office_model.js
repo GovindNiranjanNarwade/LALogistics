@@ -33,6 +33,11 @@ const officeSchema = mongoose.Schema({
     },
     GroupId:{
         type:Number
+    },
+    Role:{
+        type: String,
+  default: 'officeAdmin',
+  enum: ["admin", "officeAdmin", "deliveryBoy","customer","SuperAdmin"]
     }
 
 },{

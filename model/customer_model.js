@@ -38,6 +38,11 @@ const customerSchema = mongoose.Schema({
     },
     GroupId:{
         type:Number
+    },
+    Role:{
+        type: String,
+  default: 'customer',
+  enum: ["admin", "officeAdmin", "deliveryBoy","customer","SuperAdmin"]
     }
 
 },{
