@@ -2150,6 +2150,11 @@
 "Password":{
     "type":"String",
     "example":""
+},
+"Role":{
+  "type": "String",
+"default": null,
+"enum": ["admin", "officeAdmin", "deliveryBoy","customer","SuperAdmin"]
 }
 
 }
