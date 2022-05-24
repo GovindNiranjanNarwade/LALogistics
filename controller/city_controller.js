@@ -18,7 +18,7 @@ exports.getAllCity = async(req,res)=>{
 }
 exports.getCityBytheirState = async(req,res)=>{
     try {
-        const result = await city.find(req.params.state)
+        const result = await city.findOne(req.params.state)
         res.json({
             count:result.length,
             success:true,
