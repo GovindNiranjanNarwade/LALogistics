@@ -26,14 +26,16 @@ exports.CreateAdminDetails = async(req,res)=>{
 }
 exports.getAdmin = async(req,res)=>{
     try {
-        const result = await admin.find({
-            '$lookup' : {
-                'from' : "groups",
-                'localField' : "GroupId",
-                'foreignField' : "GroupId",
-                'as' : "groups"
+        const result = await admin.aggregate([
+            {
+                $lookup:{
+                    from:'groups',
+                    localField:'GroupId',
+                    foreignField:'GroupId',
+                    as:"Group"
+                }
             }
-            })
+        ])
         res.json({
             count:result.length,
             success:true,
