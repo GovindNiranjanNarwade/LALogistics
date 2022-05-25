@@ -12,7 +12,7 @@ exports.CreateDeliveryBoyDetails = async(req,res)=>{
             DeliveryBoyAddress:req.body.DeliveryBoyAddress,
             DeliveryBoyCity:req.body.DeliveryBoyCity,
             DeliveryBoyState:req.body.DeliveryBoyState,
-           
+            GroupId:req.body.GroupId
         })
         res.json({
             success:true,
