@@ -18,7 +18,16 @@ exports.CreateCustomer = async(req,res)=>{
 }
 exports.getCustomer = async(req,res)=>{
     try {
-        const result = await customer.find()
+        const result = await customer.aggregate([
+            {
+                $lookup:{
+                    from:'groups',
+                    localField:'GroupId',
+                    foreignField:'GroupId',
+                    as:"Group"
+                }
+            }
+        ])
         res.json({
             count:result.length,
             success:true,
