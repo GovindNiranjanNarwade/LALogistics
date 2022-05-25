@@ -12,7 +12,7 @@ exports.createOfficeAdmin = async(req,res)=>{
             City:req.body.City,
             State:req.body.State,
             GroupId:req.body.GroupId,
-            Role:req.body.Role
+           
             
         })
         console.log(result);

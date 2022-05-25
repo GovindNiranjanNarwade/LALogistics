@@ -35,11 +35,7 @@ const DeliveryBoyDetailsSchema = mongoose.Schema({
     GroupId:{
         type:Number
     },
-    Role:{
-        type: String,
-  default: 'deliveryBoy',
-  enum: ["admin", "officeAdmin", "deliveryBoy","customer","SuperAdmin"]
-    }
+   
 
 },{
 timestamps:true

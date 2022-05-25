@@ -11,7 +11,7 @@ exports.CreateDeliveryBoyDetails = async(req,res)=>{
             DeliveryBoyAddress:req.body.DeliveryBoyAddress,
             DeliveryBoyCity:req.body.DeliveryBoyCity,
             DeliveryBoyState:req.body.DeliveryBoyState,
-            Role:req.body.Role
+           
         })
         res.json({
             success:true,

@@ -8,7 +8,7 @@ exports.CreateAdminDetails = async(req,res)=>{
             Email:req.body.Email,
             Password:bcrypt.hashSync(req.body.Password,10),
             GroupId:req.body.GroupId,
-            Role:req.body.Role
+         
            
         })
         res.json({
@@ -26,7 +26,14 @@ exports.CreateAdminDetails = async(req,res)=>{
 }
 exports.getAdmin = async(req,res)=>{
     try {
-        const result = await admin.find()
+        const result = await admin.find({
+            '$lookup' : {
+                'from' : "groups",
+                'localField' : "GroupId",
+                'foreignField' : "GroupId",
+                'as' : "groups"
+            }
+            })
         res.json({
             count:result.length,
             success:true,
