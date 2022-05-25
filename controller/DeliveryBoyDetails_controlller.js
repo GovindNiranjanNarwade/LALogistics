@@ -28,7 +28,16 @@ exports.CreateDeliveryBoyDetails = async(req,res)=>{
 }
 exports.getDeliveryBoyDetails = async(req,res)=>{
     try {
-        const result = await DeliveryBoyDetails.find()
+        const result = await DeliveryBoyDetails.aggregate([
+            {
+                $lookup:{
+                    from:'groups',
+                    localField:'GroupId',
+                    foreignField:'GroupId',
+                    as:"Group"
+                }
+            }
+        ])
         res.json({
             count:result.length,
             success:true,

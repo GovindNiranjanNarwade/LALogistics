@@ -31,7 +31,16 @@ exports.createOfficeAdmin = async(req,res)=>{
 }
 exports.getOfficeAdmin = async(req,res)=>{
     try {
-        const result = await office.find()
+        const result = await office.aggregate([
+            {
+                $lookup:{
+                    from:'groups',
+                    localField:'GroupId',
+                    foreignField:'GroupId',
+                    as:"Group"
+                }
+            }
+        ])
         res.json({
             count:result.length,
             success:true,
