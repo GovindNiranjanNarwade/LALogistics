@@ -2409,6 +2409,7 @@
           
       },
       "PickupAddress":{
+        "type":"object",
         "Flat":{
             "type":"String",
             "example":""
@@ -2429,6 +2430,7 @@
           
       },
       "DestinationAddress":{
+        "type":"object",
           "Flat":{
               "type":"String",
               "example":""
@@ -2656,7 +2658,8 @@
               "example":""
           },
           "DispatchDate":{
-              "type":"String"
+              "type":"String",
+              "example":""
           },
           "DriverMobile":{
               "type":"Number",

@@ -70,7 +70,8 @@ exports.updateCustomer = async(req,res)=>{
             BillingAddress:req.body.BillingAddress,
             City:req.body.City,
             CompanyName:req.body.CompanyName,
-            GstNo:req.body.GstNo
+            GstNo:req.body.GstNo,
+            GroupId:req.body.GroupId
         }, {
             new: true,
             runValidators: true,})
