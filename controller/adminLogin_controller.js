@@ -1,4 +1,5 @@
 const admin = require("../model/admin_model")
+const Group = require("../model/Group_model")
 brycpt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const Adminlogin = async(req,res) =>{
@@ -25,10 +26,21 @@ const Adminlogin = async(req,res) =>{
  }
  const token = await jwt.sign({user:result._id},process.env.JWT_SECRET_KEY)
  // all email and pasword match
+ const resAdmin = await admin.aggregate([
+    {
+        $lookup:{
+            from:'groups',
+            localField:'GroupId',
+            foreignField:'GroupId',
+            as:"Group"
+        }
+    },
+    {$match: {Email:req.body.Email }}
+])
  res.json({
     success:true,
     message:"You are logged in",
-    data:result,
+    data:resAdmin,
      token
  
  })
