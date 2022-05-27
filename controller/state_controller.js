@@ -1,7 +1,17 @@
 const state = require("../model/state_model")
+const city = require("../model/city_model")
 exports.getStateWithCity = async(req,res)=>{
     try {
-        const result = await state.find()
+        const result = await state.aggregate([
+            {
+                $lookup:{
+                    from:'cities',
+                    localField:'state',
+                    foreignField:'state',
+                    as:"City"
+                }
+            }
+        ])
         res.json({
             count:result.length,
             success:true,

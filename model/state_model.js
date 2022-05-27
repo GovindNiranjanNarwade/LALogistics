@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const stateSchema = mongoose.Schema({
-    name:{
+    state:{
         type:String
     },
     isoCode:{
