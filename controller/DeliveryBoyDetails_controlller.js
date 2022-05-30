@@ -12,7 +12,9 @@ exports.CreateDeliveryBoyDetails = async(req,res)=>{
             DeliveryBoyAddress:req.body.DeliveryBoyAddress,
             DeliveryBoyCity:req.body.DeliveryBoyCity,
             DeliveryBoyState:req.body.DeliveryBoyState,
-            GroupId:req.body.GroupId
+            GroupId:req.body.GroupId,
+            StateId:req.body.StateId,
+            Cityid:req.body.Cityid,
         })
         res.json({
             success:true,
@@ -37,6 +39,24 @@ exports.getDeliveryBoyDetails = async(req,res)=>{
                     foreignField:'GroupId',
                     as:"Group"
                 }
+            },
+            {
+                $lookup:{
+                    from:'states',
+                    localField:'Cityid',
+                    foreignField:'Cityid',
+                    as:"City"
+                },
+            },
+            {
+                
+                    $lookup:{
+                        from:'states',
+                        localField:'StateId',
+                        foreignField:'StateId',
+                        as:"State"
+                    }
+                
             }
         ])
         res.json({

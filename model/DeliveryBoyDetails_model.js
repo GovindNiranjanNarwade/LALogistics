@@ -35,6 +35,12 @@ const DeliveryBoyDetailsSchema = mongoose.Schema({
     GroupId:{
         type:Number
     },
+    Cityid:{
+        type:String
+    },
+    StateId:{
+        type:Number
+    }
    
 
 },{

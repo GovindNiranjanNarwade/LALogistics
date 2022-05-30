@@ -43,3 +43,20 @@ exports.getCityBytheirState = async(req,res)=>{
         })  
     }
 }
+exports.deleteAllCity = async(req,res)=>{
+    try {
+        const result = await city.deleteMany()
+        res.json({
+            count:result.length,
+            success:true,
+            message:" Delete All city ",
+            data:null
+        })
+    } catch (error) {
+        res.json({
+            success:false,
+            message:"Something  went wrong",
+            data:null
+        })  
+    }
+}
