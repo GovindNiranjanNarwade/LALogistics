@@ -34,7 +34,7 @@ const customerSchema = mongoose.Schema({
         type:Number
     },
     Cityid:{
-        type:Number
+        type:String
     },
   
 

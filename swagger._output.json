@@ -2087,7 +2087,7 @@
             "example":""
         },
         "Cityid":{
-            "type":"Number",
+            "type":"String",
             "example":""
         },
         "CustomerName":{

@@ -1,5 +1,6 @@
 const customer = require("../model/customer_model")
 const state = require('../model/state_model')
+const city = require('../model/city_model')
 const bcrypt = require("bcryptjs")
 exports.CreateCustomer = async(req,res)=>{
     try {
