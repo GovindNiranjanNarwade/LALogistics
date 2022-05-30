@@ -6,8 +6,8 @@ exports.getStateWithCity = async(req,res)=>{
             {
                 $lookup:{
                     from:'cities',
-                    localField:'state',
-                    foreignField:'state',
+                    localField:'StateId',
+                    foreignField:'StateId',
                     as:"City"
                 }
             }

@@ -19,29 +19,28 @@ exports.CreateCustomer = async(req,res)=>{
 }
 exports.getCustomer = async(req,res)=>{
     try {
-        const result = await customer.find()
-        // .aggregate([
-        //     {
-        //         $lookup:{
-        //             from:'cities',
-        //             localField:'id',
-        //             foreignField:'City',
-        //             as:"City"
-        //         },
-        //     },
-        //     {
+        const result = await customer.aggregate([
+            {
+                $lookup:{
+                    from:'cities',
+                    localField:'Cityid',
+                    foreignField:'id',
+                    as:"City"
+                },
+            },
+            {
                 
-        //             $lookup:{
-        //                 from:'cities',
-        //                 localField:'cities._id',
-        //                 foreignField:'State',
-        //                 as:"State"
-        //             }
+                    $lookup:{
+                        from:'cities',
+                        localField:'StateId',
+                        foreignField:'StateId',
+                        as:"State"
+                    }
                 
-        //     }
+            }
           
            
-        // ])
+        ])
         res.json({
             count:result.length,
             success:true,

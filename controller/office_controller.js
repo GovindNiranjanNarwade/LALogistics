@@ -40,6 +40,24 @@ exports.getOfficeAdmin = async(req,res)=>{
                     foreignField:'GroupId',
                     as:"Group"
                 }
+            },
+            {
+                $lookup:{
+                    from:'cities',
+                    localField:'id',
+                    foreignField:'City',
+                    as:"City"
+                },
+            },
+            {
+                
+                    $lookup:{
+                        from:'cities',
+                        localField:'cities._id',
+                        foreignField:'State',
+                        as:"State"
+                    }
+                
             }
         ])
         res.json({

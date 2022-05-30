@@ -2082,7 +2082,14 @@
       "Customer":{
        
         "properties":{
-          
+          "StateId":{
+            "type":"Number",
+            "example":""
+        },
+        "Cityid":{
+            "type":"Number",
+            "example":""
+        },
         "CustomerName":{
          "type":"String",
          "example":""
@@ -2097,21 +2104,13 @@
             "example":""
             
         },
-        "State":{
-            "type":"String",
-            "example":""
-            
-        },
+        
         "BillingAddress":{
             "type":"String",
             "example":""
             
         },
-        "City":{
-            "type":"String",
-            "example":""
-            
-        },
+       
         "CompanyName":{
             "type":"String",
             "example":""

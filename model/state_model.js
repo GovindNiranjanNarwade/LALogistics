@@ -15,6 +15,9 @@ const stateSchema = mongoose.Schema({
     },
     longitude:{
         type:String
+    },
+    StateId:{
+        type:Number
     }
 
        

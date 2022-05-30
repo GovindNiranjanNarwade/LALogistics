@@ -10,6 +10,9 @@ const citySchema = mongoose.Schema({
     State:{
         type:String
     },
+    StateId:{
+        type:Number
+    }
     
        
 

@@ -16,18 +16,12 @@ const customerSchema = mongoose.Schema({
         type:Number,
         
     },
-    State:{
-        type:String,
-        
-    },
+   
     BillingAddress:{
         type:String,
         
     },
-    City:{
-        type:String,
-        
-    },
+   
     CompanyName:{
         type:String,
         
@@ -36,7 +30,12 @@ const customerSchema = mongoose.Schema({
         type:String,
         
     },
-  
+    StateId:{
+        type:Number
+    },
+    Cityid:{
+        type:Number
+    },
   
 
 },{
