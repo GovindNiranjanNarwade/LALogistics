@@ -13,7 +13,8 @@ exports.createOfficeAdmin = async(req,res)=>{
             City:req.body.City,
             State:req.body.State,
             GroupId:req.body.GroupId,
-           
+            StateId:req.body.StateId,
+            Cityid:req.body.Cityid,
             
         })
         console.log(result);
@@ -41,20 +42,21 @@ exports.getOfficeAdmin = async(req,res)=>{
                     as:"Group"
                 }
             },
+            
             {
                 $lookup:{
                     from:'cities',
-                    localField:'id',
-                    foreignField:'City',
+                    localField:'Cityid',
+                    foreignField:'Cityid',
                     as:"City"
                 },
             },
             {
                 
                     $lookup:{
-                        from:'cities',
-                        localField:'cities._id',
-                        foreignField:'State',
+                        from:'states',
+                        localField:'StateId',
+                        foreignField:'StateId',
                         as:"State"
                     }
                 

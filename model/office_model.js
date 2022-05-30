@@ -23,21 +23,14 @@ const officeSchema = mongoose.Schema({
         type:String,
         
     },
-    City:{
-        type:String,
-        
-    },
-    State:{
-        type:String,
-        
-    },
     GroupId:{
         type:Number
     },
-    Role:{
-        type: String,
-  default: 'officeAdmin',
-  enum: ["admin", "officeAdmin", "deliveryBoy","customer","SuperAdmin"]
+    Cityid:{
+        type:String
+    },
+    StateId:{
+        type:Number
     }
 
 },{

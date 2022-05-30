@@ -2288,16 +2288,15 @@
     "example":""
     
 },
-"DeliveryBoyCity":{
-    "type":"String",
-    "example":""
-    
+"Cityid":{
+  "type":"String",
+  "example":""
 },
-"DeliveryBoyState":{
-    "type":"String",
-    "example":""
-    
+"StateId":{
+  "type":"Number",
+  "example":""
 }
+
 }
      },
      "Docket":{
@@ -2786,10 +2785,14 @@
             "example":""
             
         },
-        "Role":{
-            "type":"String",
-            "example":""
-           },
+        "Cityid":{
+          "type":"String",
+          "example":""
+      },
+      "StateId":{
+          "type":"Number",
+          "example":""
+      },
         "Password":{
             "type":"String",
             "example":""
@@ -2799,17 +2802,9 @@
             "type":"String",
             "example":""
             
-        },
-        "City":{
-            "type":"String",
-            "example":""
-          
-        },
-        "State":{
-            "type":"String",
-            "example":""
-            
         }
+        
+        
         }
       },
       "PickupDetails":{

@@ -10,8 +10,6 @@ exports.CreateDeliveryBoyDetails = async(req,res)=>{
             DeliveryBoyMobile:req.body.DeliveryBoyMobile,
             DeliveryBoyPassword:bcrypt.hashSync(req.body.DeliveryBoyPassword,10),
             DeliveryBoyAddress:req.body.DeliveryBoyAddress,
-            DeliveryBoyCity:req.body.DeliveryBoyCity,
-            DeliveryBoyState:req.body.DeliveryBoyState,
             GroupId:req.body.GroupId,
             StateId:req.body.StateId,
             Cityid:req.body.Cityid,
@@ -40,9 +38,10 @@ exports.getDeliveryBoyDetails = async(req,res)=>{
                     as:"Group"
                 }
             },
+           
             {
                 $lookup:{
-                    from:'states',
+                    from:'cities',
                     localField:'Cityid',
                     foreignField:'Cityid',
                     as:"City"
@@ -58,6 +57,7 @@ exports.getDeliveryBoyDetails = async(req,res)=>{
                     }
                 
             }
+          
         ])
         res.json({
             count:result.length,
