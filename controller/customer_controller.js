@@ -25,14 +25,14 @@ exports.getCustomer = async(req,res)=>{
                 $lookup:{
                     from:'cities',
                     localField:'Cityid',
-                    foreignField:'id',
+                    foreignField:'Cityid',
                     as:"City"
                 },
             },
             {
                 
                     $lookup:{
-                        from:'cities',
+                        from:'states',
                         localField:'StateId',
                         foreignField:'StateId',
                         as:"State"
