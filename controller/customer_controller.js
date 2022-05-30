@@ -19,19 +19,29 @@ exports.CreateCustomer = async(req,res)=>{
 }
 exports.getCustomer = async(req,res)=>{
     try {
-        const result = await customer.aggregate([
-            {
-                $lookup:{
-                    from:'states',
-                    localField:'states._id',
-                    foreignField:'state',
-                    as:"State"
-                }
-
-            },
+        const result = await customer.find()
+        // .aggregate([
+        //     {
+        //         $lookup:{
+        //             from:'cities',
+        //             localField:'id',
+        //             foreignField:'City',
+        //             as:"City"
+        //         },
+        //     },
+        //     {
+                
+        //             $lookup:{
+        //                 from:'cities',
+        //                 localField:'cities._id',
+        //                 foreignField:'State',
+        //                 as:"State"
+        //             }
+                
+        //     }
           
            
-        ])
+        // ])
         res.json({
             count:result.length,
             success:true,
@@ -64,18 +74,9 @@ exports.deleteCustomer = async(req,res)=>{
 }
 exports.updateCustomer = async(req,res)=>{
     try {
-        const result = await customer.findByIdAndUpdate(req.params.id,{
-            CustomerId:req.body.CustomerId,
-            CustomerName:req.body.CustomerName,
-            Email:req.body.Email,
-            Mobile:req.body.Mobile,
-            Password:bcrypt.hashSync(req.body.Password,10),
-            BillingAddress:req.body.BillingAddress,
-            City:req.body.City,
-            CompanyName:req.body.CompanyName,
-            GstNo:req.body.GstNo,
-            GroupId:req.body.GroupId
-        }, {
+        const result = await customer.findByIdAndUpdate(req.params.id,
+            req.body
+        , {
             new: true,
             runValidators: true,})
         res.json({

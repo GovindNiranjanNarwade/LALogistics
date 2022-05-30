@@ -4,10 +4,10 @@ const citySchema = mongoose.Schema({
     id:{
         type:Number
     },
-    name:{
+    City:{
         type:String
     },
-    state:{
+    State:{
         type:String
     },
     
