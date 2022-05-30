@@ -23,7 +23,7 @@ exports.getCustomer = async(req,res)=>{
         const result = await customer.aggregate([
             {
                 $lookup:{
-                    from:'cities',
+                    from:'states',
                     localField:'Cityid',
                     foreignField:'Cityid',
                     as:"City"
