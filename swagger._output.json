@@ -2082,12 +2082,7 @@
       "Customer":{
        
         "properties":{
-          "Group":{
-            "type":"Number",
-            "required":true,
-            "ref":"Group",
-            "example":""
-           },
+          
         "CustomerName":{
          "type":"String",
          "example":""

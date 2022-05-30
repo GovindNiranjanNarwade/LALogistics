@@ -1,5 +1,5 @@
 const customer = require("../model/customer_model")
-const Group = require('../model/Group_model')
+const state = require('../model/state_model')
 const bcrypt = require("bcryptjs")
 exports.CreateCustomer = async(req,res)=>{
     try {
@@ -22,12 +22,15 @@ exports.getCustomer = async(req,res)=>{
         const result = await customer.aggregate([
             {
                 $lookup:{
-                    from:'groups',
-                    localField:'GroupId',
-                    foreignField:'GroupId',
-                    as:"Group"
+                    from:'states',
+                    localField:'states._id',
+                    foreignField:'state',
+                    as:"State"
                 }
-            }
+
+            },
+          
+           
         ])
         res.json({
             count:result.length,
