@@ -7,9 +7,6 @@ const statusSchema = mongoose.Schema({
     Status:{
         type:String
     },
-    
-       
-
 },{
 timestamps:true
 })

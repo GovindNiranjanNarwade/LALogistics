@@ -24,7 +24,7 @@ exports.getDocketDetails = async(req,res)=>{
                     from:'status',
                     localField:'statusId',
                     foreignField:'statusId',
-                    as:"Status"
+                    as:"status"
                 }
             }
         ])
@@ -94,7 +94,7 @@ exports.getSingleDocket = async(req,res)=>{
 }
 exports.SearchDocketByStatus = async(req,res)=>{
     try {
-        const result = await docket.findById(req.body.status)
+        const result = await docket.findById(req.body.statusId)
         res.json({
             success:true,
             message:"Search  Docket  Details By Status",

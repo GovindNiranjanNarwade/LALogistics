@@ -17,16 +17,7 @@ exports.CreateStatus = async(req,res)=>{
 }
 exports.getAllStatus = async(req,res)=>{
     try {
-        const result = await status.aggregate([
-            {
-                $lookup:{
-                    from:'cities',
-                    localField:'Cityid',
-                    foreignField:'Cityid',
-                    as:"City"
-                }
-            }
-        ])
+        const result = await status.find()
         res.json({
             count:result.length,
             success:true,
