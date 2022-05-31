@@ -115,7 +115,10 @@ const docketSchema = mongoose.Schema({
       Pincode:{
           type:String
       },
-      status:{
+      statusId:{
+          type:String
+      },
+      Currentlocation:{
           type:String
       }
     },

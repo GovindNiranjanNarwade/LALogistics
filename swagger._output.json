@@ -2071,7 +2071,72 @@
             }
           }
         }
+      },
+      "/api/v1/CreateStatus": {
+        "post": {
+          "tags": [
+            "Status"
+          ],
+          "description": "Create Status Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"Status",
+                "schema": {
+                    "$ref": "#/definitions/Status"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
+      },
+      "/api/v1/getAllStatus":{
+        "get": {
+          "tags": [
+            "Status"
+          ],
+          "description": "get Status Information",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Status Details Found",
+                "in":"body",
+                "schema": {
+                    "$ref": "#/definitions/Status"
+                  }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
       }
+      
      
           
            
@@ -2307,10 +2372,14 @@
           "example":""
           
       },
-      "status":{
+      "statusId":{
           "type":"String",
           "example":""
         
+      },
+      "Currentlocation":{
+        "type":"String",
+        "example":""
       },
       "ConsignerCompany":{
           "type":"String",
@@ -3069,6 +3138,21 @@
             "type":"String",
             "example":""
         }
+        }
+      },
+      "Status":{
+        "type":"object",
+        "properties":{
+          "statusId":{
+            "type":"String",
+            "example":""
+
+        },
+        "Status":{
+            "type":"String",
+            "example":""
+        }
+
         }
       }
   }

@@ -1,4 +1,5 @@
 const docket = require("../model/docket_model")
+const status =require("../model/status_model")
 exports.CreateDocketDetails = async(req,res)=>{
     try {
         const result = await docket.create(req.body)
@@ -17,7 +18,16 @@ exports.CreateDocketDetails = async(req,res)=>{
 }
 exports.getDocketDetails = async(req,res)=>{
     try {
-        const result = await docket.find()
+        const result = await docket.aggregate([
+            {
+                $lookup:{
+                    from:'status',
+                    localField:'statusId',
+                    foreignField:'statusId',
+                    as:"Status"
+                }
+            }
+        ])
         res.json({
             count:result.length,
             success:true,
