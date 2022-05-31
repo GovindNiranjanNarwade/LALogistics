@@ -9,6 +9,12 @@ const docketSchema = mongoose.Schema({
         type:String,
       
     },
+    statusId:{
+        type:String
+    },
+    Currentlocation:{
+        type:String
+    },
     ConsignerCompany:{
         type:String,
         
@@ -115,12 +121,7 @@ const docketSchema = mongoose.Schema({
       Pincode:{
           type:String
       },
-      statusId:{
-          type:String
-      },
-      Currentlocation:{
-          type:String
-      }
+     
     },
 
 },{
