@@ -2135,6 +2135,82 @@
             }
           }
         }
+      },
+      "/api/v1/CreateAddress": {
+        "post": {
+          "tags": [
+            "Address"
+          ],
+          "description": "Create Address Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "in":"body",
+                "required":true,
+                "name":"Address",
+                "schema": {
+                    "$ref": "#/definitions/Address"
+                  }
+            }    
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Address"
+            },
+            "description": "Created"
+          
+          },
+         
+          "500": {
+            "description": "Internal Server Error"
+          }
+
+        }
+        }
+      },
+      "/api/v1/updateAddress/{id}":{
+        "put": {
+          "tags": [
+            "Address"
+          ],
+          "description": "Edit Address Details",
+          "consumes": [
+            "text/plain"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+          
+            {
+              "id":"",
+              "in":"body",
+              "name":"Address",
+              "type":"object",
+              "example":{
+                "id":""
+              }
+  
+            }
+          
+           
+          ],
+          "responses": {
+            "200": {
+            
+              "description": "Address found update the Address details."
+            },
+            "500": {
+              "description": "Server Failure."
+            }
+          }
+        }
       }
       
      
@@ -2470,54 +2546,24 @@
           "example":""
           
       },
-      "PickupAddress":{
-        "type":"object",
-        "Flat":{
-            "type":"String",
-            "example":""
-        },
-        "State":{
-          "type":"String",
-          "example":""
-      },
-      "City":{
-          "type":"String",
-          "example":""
-      },
-      "Pincode":{
-          "type":"String",
-          "example":""
-      }
-  
-          
-      },
-      "DestinationAddress":{
-        "type":"object",
-          "Flat":{
-              "type":"String",
-              "example":""
-          },
-          "ReviewName":{
-            "type":"String",
-            "example":""
-        },
-        "ReviewMobile":{
-            "type":"String",
-            "example":""
-        },
-        "State":{
-            "type":"String",
-            "example":""
-        },
-        "City":{
-         "type":"String",
-         "example":""
-        },
-        "Pincode":{
-            "type":"String",
-            "example":""
-        }
-      }
+      "ReceiverName":{
+        "type":"String",
+        "example":""
+    },
+    "ReceiverMobile":{
+        "type":"String",
+        "example":""
+    },
+    "Payment":{
+        "type":"String",
+        "example":""
+    },
+    "PaymentRecived":{
+        "type":"Boolean",
+        "example":""
+    }
+      
+     
        }
      } ,
      "DRSDetails":{
@@ -3149,6 +3195,31 @@
 
         },
         "Status":{
+            "type":"String",
+            "example":""
+        }
+        }
+      },
+      "Address":{
+        "type":"object",
+        "properties":{
+          "Address":{
+            "type":"String",
+            "example":""
+        },
+        "StateId":{
+            "type":"Number",
+            "example":""
+        },
+        "Cityid":{
+            "type":"String",
+            "example":""
+        },
+        "AddressType":{
+            "type":"String",
+            "example":""
+        },
+        "DocketId":{
             "type":"String",
             "example":""
         }

@@ -7,7 +7,6 @@ const docketSchema = mongoose.Schema({
     },
     CustomerId:{
         type:String,
-      
     },
     statusId:{
         type:String
@@ -85,43 +84,18 @@ const docketSchema = mongoose.Schema({
     Destination:{
         type:String,
         
-    },
-    PickupAddress:{
-      Flat:{
-          type:String
-      },
-      State:{
+    }, 
+    ReceiverName:{
         type:String
     },
-    City:{
+    ReceiverMobile:{
         type:String
     },
-    Pincode:{
+    Payment:{
         type:String
     },
-
-        
-    },
-    DestinationAddress:{
-        Flat:{
-            type:String
-        },
-        ReviewName:{
-          type:String
-      },
-      ReviewMobile:{
-          type:String
-      },
-      State:{
-          type:String
-      },
-      City:{
-       type:String
-      },
-      Pincode:{
-          type:String
-      },
-     
+    PaymentRecived:{
+        type:Boolean
     },
 
 },{
