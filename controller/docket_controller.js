@@ -26,6 +26,22 @@ exports.getDocketDetails = async(req,res)=>{
                     foreignField:'statusId',
                     as:"status"
                 }
+            },
+            {
+                $lookup:{
+                    from:'customers',
+                    localField:'CustomerId',
+                    foreignField:'CustomerId',
+                    as:"Customer"
+                }
+            },
+            {
+                $lookup:{
+                    from:'addresses',
+                    localField:'SourceId',
+                    foreignField:'SourceId',
+                    as:"Address"
+                }
             }
         ])
         res.json({

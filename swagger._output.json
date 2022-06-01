@@ -2223,6 +2223,10 @@
       "Customer":{
        
         "properties":{
+          "CustomerId":{
+            "type":"String",
+            "example":""
+          },
           "StateId":{
             "type":"Number",
             "example":""
@@ -2246,11 +2250,11 @@
             
         },
         
-        "BillingAddress":{
+        
+          "SourceId":{
             "type":"String",
             "example":""
-            
-        },
+      },
        
         "CompanyName":{
             "type":"String",
@@ -2561,7 +2565,10 @@
     "PaymentRecived":{
         "type":"Boolean",
         "example":""
-    }
+    },
+    "SourceId":{
+      "type":"String"
+  }
       
      
        }
